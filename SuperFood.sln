@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperFood", "SuperFood\Supe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperFood.Tests", "SuperFood.Tests\SuperFood.Tests.csproj", "{D9FE1B8B-4DE4-42C0-A143-4577E5ED723D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperFood.Shared", "SuperFood.Shared\SuperFood.Shared.csproj", "{370793DE-E751-4D0B-9B3E-A5BCFE2A94C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D9FE1B8B-4DE4-42C0-A143-4577E5ED723D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9FE1B8B-4DE4-42C0-A143-4577E5ED723D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9FE1B8B-4DE4-42C0-A143-4577E5ED723D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{370793DE-E751-4D0B-9B3E-A5BCFE2A94C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{370793DE-E751-4D0B-9B3E-A5BCFE2A94C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{370793DE-E751-4D0B-9B3E-A5BCFE2A94C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{370793DE-E751-4D0B-9B3E-A5BCFE2A94C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
