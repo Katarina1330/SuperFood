@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SuperFood.Shared.Data.Implementations;
+using SuperFood.Shared.Services.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +10,16 @@ namespace SuperFood.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IRepositoryService _repository;
+
+        public HomeController(IRepositoryService repository)
+        {
+            _repository = repository;
+        }
+
         public ActionResult Index()
         {
+            
             return View();
         }
 

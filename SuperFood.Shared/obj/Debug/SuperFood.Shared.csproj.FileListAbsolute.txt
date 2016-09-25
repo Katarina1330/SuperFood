@@ -1,0 +1,10 @@
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\bin\Debug\SuperFood.Shared.dll.config
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\bin\Debug\SuperFood.Shared.dll
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\bin\Debug\SuperFood.Shared.pdb
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\bin\Debug\EntityFramework.dll
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\bin\Debug\EntityFramework.xml
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\obj\Debug\SuperFood.Shared.csprojResolveAssemblyReference.cache
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\obj\Debug\SuperFood.Shared.dll
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\obj\Debug\SuperFood.Shared.pdb

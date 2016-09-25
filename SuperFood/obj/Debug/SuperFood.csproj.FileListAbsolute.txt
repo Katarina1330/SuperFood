@@ -80,3 +80,17 @@ C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\Microsoft.Owin.Securi
 C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\obj\Debug\SuperFood.csprojResolveAssemblyReference.cache
 C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\obj\Debug\SuperFood.dll
 C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\obj\Debug\SuperFood.pdb
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\Microsoft.Practices.Unity.dll
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\Microsoft.Practices.Unity.Mvc.dll
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\SuperFood.Shared.dll
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\WebActivatorEx.dll
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\SuperFood.Shared.pdb
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\Microsoft.Practices.Unity.xml
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\Microsoft.Practices.Unity.Mvc.xml
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml

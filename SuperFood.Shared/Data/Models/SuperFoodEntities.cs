@@ -7,6 +7,7 @@ namespace SuperFood.Shared.Data.Implementations
         public SuperFoodEntities()
             : base("name=SuperFoodEntities")
         {
+            Database.SetInitializer<SuperFoodEntities>(null);
         }
 
         public virtual DbSet<Order> Orders { get; set; }
