@@ -1,8 +1,25 @@
-﻿@model SuperFood.Models.ProductTypeViewModels
+﻿@model List<SuperFood.Models.ProductTypeViewModels>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Product Types</h2>
+
+<a href="/ProductType/Create">Create New</a>
+
+<table style="width:100%">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+        </tr>
+    }
+   
+</table>
 

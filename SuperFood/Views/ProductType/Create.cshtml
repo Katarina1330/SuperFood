@@ -1,0 +1,29 @@
+﻿@model SuperFood.Models.ProductTypeViewModels
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="loads container col-sm-12" style="width: 98% !important;">
+    <br />
+    <div class="col-xs-12">
+        <h2>Create new product type</h2>
+    </div>
+
+    <br />
+    <br />
+    <form action="/ProductType/Create" method="post">
+        <div class="col-xs-12">
+            <span>Name</span><br>
+            @Html.TextBoxFor(p => p.Name)
+        </div>
+
+        <div class="col-xs-12 col-md-1">
+            <br />
+            <button class="btn btn-default" type="submit">
+                Save
+            </button>
+        </div>
+    </form>
+</div>
+
