@@ -1,0 +1,15 @@
+﻿<!--this disables the spinner on the modals contained in strategies-->
+<style>
+    .modal-body {
+        background: none !important;
+        height: auto !important;
+        width: auto !important;
+        margin-top: 0;
+    }
+</style>
+<script src="~/Typescript/App/app.js"></script>
+<div ng-app="app" ng-init="ika='5'" style="height: 100%;">
+    {{ika * 5}}
+    <div class="col-md-9" ng-view style="padding: 0; width: 100%; height: 100%" autoscroll="true"></div>
+    Test angular
+</div>
