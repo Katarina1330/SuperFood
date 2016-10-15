@@ -17,7 +17,9 @@ module SuperFood.AdministrationApp {
         private init() {
 
             var self = this;
-
+            self.dataSvc.getProductTypes().then(function (result) {
+                self.$scope.allProductTypes = result;
+            });
         }
 
         //protect against minification

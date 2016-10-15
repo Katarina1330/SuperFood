@@ -18,8 +18,8 @@ namespace SuperFood.Controllers
             _repository = repository;
         }
 
-        // GET: ProductType
-        public ActionResult Index()
+        [HttpGet]
+        public JsonResult GetAll()
         {
             var productTypes = _repository.Read<ProductType>()
                 .Select(p => new ProductTypeViewModels
@@ -28,7 +28,7 @@ namespace SuperFood.Controllers
                     Name = p.Name
                 }).ToList(); 
 
-            return View(productTypes);
+            return Json(productTypes, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Create()

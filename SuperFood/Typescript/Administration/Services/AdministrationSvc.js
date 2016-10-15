@@ -8,7 +8,7 @@ var SuperFood;
 (function (SuperFood) {
     var AdministrationApp;
     (function (AdministrationApp) {
-        //this is our data service -- will handle ajax calls to loadprofile controller
+        //this is administration data service 
         var AdministrationSvc = (function () {
             /**
             * Constructor for DataSvc object
@@ -17,7 +17,7 @@ var SuperFood;
             */
             function AdministrationSvc($http, $q) {
                 //relative Url for MVC controller
-                this.productTypeApiPath = "ProductType/Index";
+                this.productTypeApiPath = "ProductType/GetAll";
                 this.httpService = $http;
                 this.qService = $q;
             }

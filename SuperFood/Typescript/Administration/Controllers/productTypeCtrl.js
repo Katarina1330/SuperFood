@@ -23,6 +23,9 @@ var SuperFood;
             }
             ProductTypeCtrl.prototype.init = function () {
                 var self = this;
+                self.dataSvc.getProductTypes().then(function (result) {
+                    self.$scope.allProductTypes = result;
+                });
             };
             //protect against minification
             ProductTypeCtrl.$inject = ['$scope', 'administrationSvc'];

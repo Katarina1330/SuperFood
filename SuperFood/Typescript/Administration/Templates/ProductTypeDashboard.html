@@ -1,1 +1,13 @@
 ﻿<h3>Product Type Dashboard</h3>
+
+<table>
+    <tr ng-repeat="productType in allProductTypes">
+        <td>
+            {{productType.Id}}
+        </td>
+        
+        <td>
+            .{{productType.Name}}
+        </td>
+    </tr>
+</table>

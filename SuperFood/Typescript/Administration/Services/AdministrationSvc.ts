@@ -6,7 +6,7 @@
  * This is our data services module for Account CRUD
  */
 module SuperFood.AdministrationApp {
-    //this is our data service -- will handle ajax calls to loadprofile controller
+    //this is administration data service 
     export class AdministrationSvc {
 
         private httpService: ng.IHttpService;
@@ -21,7 +21,7 @@ module SuperFood.AdministrationApp {
         */
         constructor($http: ng.IHttpService, $q: ng.IQService) {
             //relative Url for MVC controller
-            this.productTypeApiPath = "ProductType/Index";
+            this.productTypeApiPath = "ProductType/GetAll";
             this.httpService = $http;
             this.qService = $q;
         }
