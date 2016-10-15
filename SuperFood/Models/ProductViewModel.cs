@@ -5,7 +5,7 @@ using System.Web;
 
 namespace SuperFood.Models
 {
-    public class ProductViewModels
+    public class ProductViewModel
     {
     }
 }

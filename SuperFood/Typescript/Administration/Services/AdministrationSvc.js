@@ -17,7 +17,8 @@ var SuperFood;
             */
             function AdministrationSvc($http, $q) {
                 //relative Url for MVC controller
-                this.productTypeApiPath = "ProductType/GetAll";
+                this.getProductTypeApiPath = "ProductType/GetAll";
+                this.createProductTypeApiPath = "ProductType/Create";
                 this.httpService = $http;
                 this.qService = $q;
             }
@@ -28,9 +29,23 @@ var SuperFood;
             AdministrationSvc.prototype.getProductTypes = function () {
                 var self = this;
                 var deferred = self.qService.defer();
-                self.httpService.get(self.productTypeApiPath).then(function (result) {
+                self.httpService.get(self.getProductTypeApiPath).then(function (result) {
                     self.allProductTypes = result.data;
                     deferred.resolve(self.allProductTypes);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+                return deferred.promise;
+            };
+            /**
+             * Create new product type
+             * @param newProductType this is new product type model
+             */
+            AdministrationSvc.prototype.createProductType = function (newProductType) {
+                var self = this;
+                var deferred = self.qService.defer();
+                self.httpService.post(self.createProductTypeApiPath, newProductType).then(function (result) {
+                    deferred.resolve(result.data);
                 }, function (error) {
                     deferred.reject(error);
                 });
@@ -50,4 +65,3 @@ var SuperFood;
         AdministrationApp.AdministrationSvc = AdministrationSvc;
     })(AdministrationApp = SuperFood.AdministrationApp || (SuperFood.AdministrationApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=AdministrationSvc.js.map

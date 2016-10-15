@@ -26,6 +26,12 @@ var SuperFood;
                 self.dataSvc.getProductTypes().then(function (result) {
                     self.$scope.allProductTypes = result;
                 });
+                self.$scope.addNewProductType = function (newProductType) {
+                    self.dataSvc.createProductType(newProductType).then(function (result) {
+                        self.$scope.allProductTypes.push(result);
+                        self.$scope.newProductType = undefined;
+                    });
+                };
             };
             //protect against minification
             ProductTypeCtrl.$inject = ['$scope', 'administrationSvc'];
@@ -34,4 +40,3 @@ var SuperFood;
         AdministrationApp.ProductTypeCtrl = ProductTypeCtrl;
     })(AdministrationApp = SuperFood.AdministrationApp || (SuperFood.AdministrationApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=ProductTypeCtrl.js.map

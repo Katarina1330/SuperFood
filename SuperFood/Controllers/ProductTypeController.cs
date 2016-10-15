@@ -22,29 +22,25 @@ namespace SuperFood.Controllers
         public JsonResult GetAll()
         {
             var productTypes = _repository.Read<ProductType>()
-                .Select(p => new ProductTypeViewModels
+                .Select(p => new ProductTypeViewModel
                 {
                     Id = p.Id, 
-                    Name = p.Name
+                    Name = p.Name,
+                    Description = p.Description
                 }).ToList(); 
 
             return Json(productTypes, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult Create(ProductTypeViewModels productTypeViewModel)
+        public JsonResult Create(ProductTypeViewModel productTypeViewModel)
         {
             var productType = new ProductType();
             productType.Name = productTypeViewModel.Name;
-            _repository.Create<ProductType>(productType);
-            ModelState.Clear();
-
-            return View();
+            productType.Description = productTypeViewModel.Description;
+            _repository.Create(productType);
+            productTypeViewModel.Id = productType.Id;
+            return Json(productTypeViewModel);
         }
     }
 }

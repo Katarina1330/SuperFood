@@ -11,7 +11,8 @@ module SuperFood.AdministrationApp {
 
         private httpService: ng.IHttpService;
         private qService: ng.IQService;
-        private productTypeApiPath: string;
+        private getProductTypeApiPath: string;
+        private createProductTypeApiPath: string;
         private allProductTypes: Array<SuperFood.AdministrationApp.Models.ProductType>;
 
         /**
@@ -21,7 +22,8 @@ module SuperFood.AdministrationApp {
         */
         constructor($http: ng.IHttpService, $q: ng.IQService) {
             //relative Url for MVC controller
-            this.productTypeApiPath = "ProductType/GetAll";
+            this.getProductTypeApiPath = "ProductType/GetAll";
+            this.createProductTypeApiPath = "ProductType/Create";
             this.httpService = $http;
             this.qService = $q;
         }
@@ -35,13 +37,32 @@ module SuperFood.AdministrationApp {
 
             var deferred = self.qService.defer();
 
-            self.httpService.get(self.productTypeApiPath).then(function (result: any) {
+            self.httpService.get(self.getProductTypeApiPath).then(function (result: any) {
                 self.allProductTypes = result.data;
 
                 deferred.resolve(self.allProductTypes);
             }, function (error) {
                 deferred.reject(error);
             });
+            return deferred.promise;
+        }
+
+        /**
+         * Create new product type
+         * @param newProductType this is new product type model
+         */
+        public createProductType(newProductType: any): ng.IPromise<any> {
+            var self = this;
+
+            var deferred = self.qService.defer();
+
+            self.httpService.post(self.createProductTypeApiPath, newProductType).then(function (result) {
+                deferred.resolve(result.data);
+
+            }, function (error) {
+                deferred.reject(error);
+            });
+
             return deferred.promise;
         }
 

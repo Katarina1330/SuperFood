@@ -20,6 +20,13 @@ module SuperFood.AdministrationApp {
             self.dataSvc.getProductTypes().then(function (result) {
                 self.$scope.allProductTypes = result;
             });
+
+            self.$scope.addNewProductType = function (newProductType) {
+                self.dataSvc.createProductType(newProductType).then(function (result) {
+                    self.$scope.allProductTypes.push(result);
+                    self.$scope.newProductType = undefined;
+                });
+            };
         }
 
         //protect against minification

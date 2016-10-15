@@ -5,9 +5,10 @@ using System.Web;
 
 namespace SuperFood.Models
 {
-    public class ProductTypeViewModels
+    public class ProductTypeViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
     }
 }

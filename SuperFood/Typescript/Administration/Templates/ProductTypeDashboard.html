@@ -1,13 +1,19 @@
 ﻿<h3>Product Type Dashboard</h3>
 
+<input type="text" ng-model="newProductType.Name" placeholder="Add Name"/>
+<input type="text" ng-model="newProductType.Description" placeholder="Add description"/>
+<button type="button" ng-click="addNewProductType(newProductType)">Add New</button>
+
 <table>
     <tr ng-repeat="productType in allProductTypes">
         <td>
             {{productType.Id}}
         </td>
-        
         <td>
-            .{{productType.Name}}
+            {{productType.Name}}
+        </td>
+        <td>
+            {{productType.Description}}
         </td>
     </tr>
 </table>
