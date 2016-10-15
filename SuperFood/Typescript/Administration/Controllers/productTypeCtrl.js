@@ -32,6 +32,22 @@ var SuperFood;
                         self.$scope.newProductType = undefined;
                     });
                 };
+                self.$scope.deleteProductType = function (productTypeId) {
+                    var apiPath = "ProductType/Delete?id=" + productTypeId;
+                    self.dataSvc.deleteById(apiPath).then(function () {
+                        var index;
+                        for (var i = 0; i < self.$scope.allProductTypes.length; i++) {
+                            var element = self.$scope.allProductTypes[i];
+                            if (element.Id == productTypeId) {
+                                index = i;
+                                break;
+                            }
+                        }
+                        if (index) {
+                            self.$scope.allProductTypes.splice(index, 1);
+                        }
+                    });
+                };
             };
             //protect against minification
             ProductTypeCtrl.$inject = ['$scope', 'administrationSvc'];
@@ -40,3 +56,4 @@ var SuperFood;
         AdministrationApp.ProductTypeCtrl = ProductTypeCtrl;
     })(AdministrationApp = SuperFood.AdministrationApp || (SuperFood.AdministrationApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=ProductTypeCtrl.js.map

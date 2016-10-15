@@ -42,5 +42,13 @@ namespace SuperFood.Controllers
             productTypeViewModel.Id = productType.Id;
             return Json(productTypeViewModel);
         }
+
+        [HttpGet]
+        public void Delete(string id)
+        {
+            var productType = new ProductType();
+            productType.Id = int.Parse(id);
+            _repository.Delete(productType);
+        }
     }
 }

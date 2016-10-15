@@ -66,6 +66,21 @@ module SuperFood.AdministrationApp {
             return deferred.promise;
         }
 
+        public deleteById(apiPath: string): ng.IPromise<any> {
+
+            var self = this;
+
+            var deferred = self.qService.defer();
+
+            self.httpService.get(apiPath).then(function (result) {
+                deferred.resolve(result);
+            }, function (error) {
+                deferred.reject(error);
+            });
+
+            return deferred.promise;
+        };
+
         /**
          * factory method for instantiating data service.
          * @param {ng.IHttpService} $http is IHttpService.

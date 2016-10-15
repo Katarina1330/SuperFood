@@ -51,6 +51,17 @@ var SuperFood;
                 });
                 return deferred.promise;
             };
+            AdministrationSvc.prototype.deleteById = function (apiPath) {
+                var self = this;
+                var deferred = self.qService.defer();
+                self.httpService.get(apiPath).then(function (result) {
+                    deferred.resolve(result);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+                return deferred.promise;
+            };
+            ;
             /**
              * factory method for instantiating data service.
              * @param {ng.IHttpService} $http is IHttpService.
@@ -65,3 +76,4 @@ var SuperFood;
         AdministrationApp.AdministrationSvc = AdministrationSvc;
     })(AdministrationApp = SuperFood.AdministrationApp || (SuperFood.AdministrationApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=AdministrationSvc.js.map
