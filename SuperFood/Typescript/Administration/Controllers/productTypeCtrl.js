@@ -23,9 +23,6 @@ var SuperFood;
             }
             ProductTypeCtrl.prototype.init = function () {
                 var self = this;
-                self.dataSvc.getProductTypes().then(function (result) {
-                    self.$scope.allProductTypes = result;
-                });
             };
             //protect against minification
             ProductTypeCtrl.$inject = ['$scope', 'administrationSvc'];
@@ -34,4 +31,4 @@ var SuperFood;
         AdministrationApp.ProductTypeCtrl = ProductTypeCtrl;
     })(AdministrationApp = SuperFood.AdministrationApp || (SuperFood.AdministrationApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=productTypeCtrl.js.map
+//# sourceMappingURL=ProductTypeCtrl.js.map

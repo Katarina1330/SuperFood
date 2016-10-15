@@ -3,28 +3,30 @@
 
 /**
  * 
- * Application for hybrid admin view 
+ * Application for admin view 
  */
 module SuperFood.AdministrationApp {
     /**
-     * admin profile controller makes comparison data
-     * it available for the charting view
+     * admin profile
      */
     export class Config {
 
-        //constructor($routeProvider: ng.route.IRouteProvider) {
-        //    $routeProvider.when("/administration/producttypes", { templateUrl: "../Typescript/Administration/Templates/ProductTypeDashboard.html", controller: "productTypeCtrl" })
+        constructor($routeProvider: ng.route.IRouteProvider) {
+            $routeProvider
+                .when("/administration/producttypes", { templateUrl: "../Typescript/Administration/Templates/ProductTypeDashboard.html", controller: "productTypeCtrl" })
+                .when("/administration/product", { templateUrl: "../Typescript/Administration/Templates/ProductDashboard.html", controller: "productCtrl" })
 
-        //        //default route
-        //        .otherwise({ redirectTo: '/admin/dashboard' });
-        //}
+                //default route
+                .otherwise({ redirectTo: '/admin/dashboard' });
+        }
     }
     //dependency injection -- from the constructor, typed IRouteProvider
-    Config.$inject = [];//['$routeProvider'];
+    Config.$inject = ['$routeProvider'];
 
     //set up the controllers, data service, and directives for the app
     var app = angular.module("administrationApp", ['ngRoute', 'ngSanitize'])
-        .config(Config);
-        //.factory('administrationSvc', ['$http', '$q', SuperFood.AdministrationApp.AdministrationSvc.factory])
-        //.controller('productTypeCtrl', SuperFood.AdministrationApp.ProductTypeCtrl);
+        .config(Config)
+        .factory('administrationSvc', ['$http', '$q', SuperFood.AdministrationApp.AdministrationSvc.factory])
+        .controller('productTypeCtrl', SuperFood.AdministrationApp.ProductTypeCtrl)
+        .controller('productCtrl', SuperFood.AdministrationApp.ProductCtrl);
 }

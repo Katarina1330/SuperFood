@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace SuperFood
 {
@@ -42,7 +41,7 @@ namespace SuperFood
             bundles.Add(new ScriptBundle("~/bundles/Javascript/SuperFoodApp")
                 .Include("~/Typescript/App/app.js"));
 
-            //site metadata module
+            //site administration module
             bundles.Add(new ScriptBundle("~/bundles/Javascript/SuperFoodAdministrationApp")
                  .IncludeDirectory("~/Typescript/Administration/Services", "*.js")
                  .IncludeDirectory("~/Typescript/Administration/Controllers", "*.js")

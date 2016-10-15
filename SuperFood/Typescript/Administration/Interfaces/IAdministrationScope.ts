@@ -1,6 +1,6 @@
 ﻿/**
  * 
- * Extensions to ng scope and route
+ * Extensions to ng scope
  */
 module SuperFood.AdministrationApp.Interfaces {
     export interface IAdministrationScope extends ng.IScope {

@@ -7,3 +7,4 @@ C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\bin\Debug\EntityFr
 C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\obj\Debug\SuperFood.Shared.dll
 C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\obj\Debug\SuperFood.Shared.pdb
+C:\Users\Katarina\Documents\GitHub\SuperFood\SuperFood.Shared\obj\Debug\SuperFood.Shared.csprojResolveAssemblyReference.cache
