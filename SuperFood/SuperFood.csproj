@@ -1064,6 +1064,7 @@
     <Content Include="Scripts\select2.js" />
     <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Typescript\Administration\Templates\AddProduct.html" />
     <Content Include="Typescript\Administration\Templates\ProductDashboard.html" />
     <Content Include="Typescript\Administration\Templates\ProductTypeDashboard.html" />
     <Content Include="Web.config">

@@ -16,6 +16,7 @@ var SuperFood;
                 $routeProvider
                     .when("/administration/producttypes", { templateUrl: "../Typescript/Administration/Templates/ProductTypeDashboard.html", controller: "productTypeCtrl" })
                     .when("/administration/product", { templateUrl: "../Typescript/Administration/Templates/ProductDashboard.html", controller: "productCtrl" })
+                    .when("/administration/product/add", { templateUrl: "../Typescript/Administration/Templates/AddProduct.html", controller: "productCtrl" })
                     .otherwise({ redirectTo: '/admin/dashboard' });
             }
             return Config;
