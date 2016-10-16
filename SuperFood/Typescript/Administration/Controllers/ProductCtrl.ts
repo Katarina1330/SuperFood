@@ -9,7 +9,12 @@ module SuperFood.AdministrationApp {
         private dataSvc: SuperFood.AdministrationApp.AdministrationSvc;
 
         private init() {
-            
+
+            var self = this;
+
+            self.dataSvc.getProducts().then(function (result) {
+                self.$scope.allProducts = result
+            });
             
         };
 

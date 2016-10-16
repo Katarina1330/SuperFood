@@ -3,9 +3,24 @@
 <a href="#administration/product/add">Add new</a>
 
 <table>
-    <tr>
+    <tr ng-repeat="product in allProducts">
         <td>
-
+            {{product.Name}}
+        </td>
+        <td>
+            {{product.Details}}
+        </td>
+        <td>
+            {{product.Description}}
+        </td>
+        <td>
+            {{product.Price}}
+        </td>
+        <td>
+            {{product.InStock}}
+        </td>
+        <td>
+            {{product.IsDeleted}}
         </td>
     </tr>
 </table>

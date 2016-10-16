@@ -1138,6 +1138,7 @@
     <TypeScriptCompile Include="Typescript\Administration\Controllers\ProductCtrl.ts" />
     <TypeScriptCompile Include="Typescript\Administration\Controllers\ProductTypeCtrl.ts" />
     <TypeScriptCompile Include="Typescript\Administration\Interfaces\IAdministrationScope.ts" />
+    <TypeScriptCompile Include="Typescript\Administration\Models\Product.ts" />
     <TypeScriptCompile Include="Typescript\Administration\Models\ProductType.ts" />
     <TypeScriptCompile Include="Typescript\Administration\Services\AdministrationSvc.ts" />
     <TypeScriptCompile Include="Typescript\App\app.ts" />

@@ -12,6 +12,10 @@ var SuperFood;
                 self.init();
             }
             ProductCtrl.prototype.init = function () {
+                var self = this;
+                self.dataSvc.getProducts().then(function (result) {
+                    self.$scope.allProducts = result;
+                });
             };
             ;
             ProductCtrl.$inject = ['$scope', 'administrationSvc'];

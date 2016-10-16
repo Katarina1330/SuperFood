@@ -23,11 +23,13 @@ namespace SuperFood.Shared.Data.Implementations
 
         public string Description { get; set; }
 
-        public decimal? Price { get; set; }
+        public decimal Price { get; set; }
 
-        public bool? InStock { get; set; }
+        public bool InStock { get; set; }
 
         public int ProductTypeId { get; set; }
+
+        public bool IsDeleted { get; set; }
 
         public virtual ProductType ProductType { get; set; }
 

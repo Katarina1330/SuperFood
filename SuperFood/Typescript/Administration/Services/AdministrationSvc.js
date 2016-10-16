@@ -19,6 +19,7 @@ var SuperFood;
                 //relative Url for MVC controller
                 this.getProductTypeApiPath = "ProductType/GetAll";
                 this.createProductTypeApiPath = "ProductType/Create";
+                this.getProductApiPath = "Product/GetAll";
                 this.httpService = $http;
                 this.qService = $q;
             }
@@ -56,6 +57,20 @@ var SuperFood;
                 var deferred = self.qService.defer();
                 self.httpService.get(apiPath).then(function (result) {
                     deferred.resolve(result);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+                return deferred.promise;
+            };
+            ;
+            /**
+             * Returns all products
+             */
+            AdministrationSvc.prototype.getProducts = function () {
+                var self = this;
+                var deferred = self.qService.defer();
+                self.httpService.get(self.getProductApiPath).then(function (result) {
+                    deferred.resolve(result.data);
                 }, function (error) {
                     deferred.reject(error);
                 });
