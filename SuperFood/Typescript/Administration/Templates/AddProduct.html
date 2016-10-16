@@ -1,2 +1,20 @@
 ﻿<h3>Create Product</h3>
 
+<form>
+    Name <input ng-model="newProduct.Name" type="text" placeholder="Add Name"/> <br>
+    <br />
+    Details <textarea ng-model="newProduct.Details" rows="4" cols="50" placeholder="Add details"></textarea><br />
+    <br />
+    Description <textarea ng-model="newProduct.Description" rows="4" cols="50" placeholder="Add description"></textarea><br />
+    <br />
+    Price <input ng-model="newProduct.Price" type="number"/><br />
+    <br />
+    In Stock<input ng-model="newProduct.InStock" type="checkbox"><br />
+    <br />
+    Category <select ng-model="newProduct.ProductType">
+                 <option value="" disabled selected hidden>Please Choose...</option>
+            </select> <br />
+    <br />
+    <input type="button" value="Save"/>
+</form>
+
