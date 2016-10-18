@@ -23,6 +23,7 @@ module SuperFood.AdministrationApp {
             self.$scope.createProduct = function (newProduct) {
                 self.dataSvc.createProduct(newProduct).then(function (result) {
                     self.$scope.allProducts.push(result);
+                    self.$scope.newProduct = null;
                 });
             };
         };

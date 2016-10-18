@@ -38,7 +38,7 @@ namespace SuperFood.Controllers
         }
 
         [HttpPost]
-        public JsonResult CreateProduct(ProductViewModel newProduct)
+        public JsonResult Create(ProductViewModel newProduct)
         {
             var product = new Product();
 

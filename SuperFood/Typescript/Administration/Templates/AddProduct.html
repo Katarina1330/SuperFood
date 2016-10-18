@@ -11,7 +11,7 @@
     <br />
     In Stock<input ng-model="newProduct.InStock" type="checkbox"><br />
     <br />
-    Category <select ng-model="newProduct.ProductType">
+    Category <select ng-model="newProduct.ProductType.Id">
                  <option value="" disabled selected hidden>Please Choose...</option>
                   <option ng-repeat="productType in allProductTypes" value="{{productType.Id}}">{{productType.Name}}</option>
             </select> <br />
