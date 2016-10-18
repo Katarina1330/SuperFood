@@ -20,6 +20,7 @@ var SuperFood;
                 this.getProductTypeApiPath = "ProductType/GetAll";
                 this.createProductTypeApiPath = "ProductType/Create";
                 this.getProductApiPath = "Product/GetAll";
+                this.createProductApiPath = "Product/Create";
                 this.httpService = $http;
                 this.qService = $q;
             }
@@ -52,6 +53,17 @@ var SuperFood;
                 });
                 return deferred.promise;
             };
+            AdministrationSvc.prototype.createProduct = function (newProduct) {
+                var self = this;
+                var deferred = self.qService.defer();
+                self.httpService.post(self.createProductApiPath, newProduct).then(function (result) {
+                    deferred.resolve(result.data);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+                return deferred.promise;
+            };
+            ;
             AdministrationSvc.prototype.deleteById = function (apiPath) {
                 var self = this;
                 var deferred = self.qService.defer();
@@ -91,3 +103,4 @@ var SuperFood;
         AdministrationApp.AdministrationSvc = AdministrationSvc;
     })(AdministrationApp = SuperFood.AdministrationApp || (SuperFood.AdministrationApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=AdministrationSvc.js.map

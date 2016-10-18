@@ -13,8 +13,9 @@
     <br />
     Category <select ng-model="newProduct.ProductType">
                  <option value="" disabled selected hidden>Please Choose...</option>
+                  <option ng-repeat="productType in allProductTypes" value="{{productType.Id}}">{{productType.Name}}</option>
             </select> <br />
     <br />
-    <input type="button" value="Save"/>
+    <input type="button" ng-click="createProduct(newProduct)" value="Save"/>
 </form>
 

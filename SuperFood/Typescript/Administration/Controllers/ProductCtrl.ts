@@ -15,7 +15,16 @@ module SuperFood.AdministrationApp {
             self.dataSvc.getProducts().then(function (result) {
                 self.$scope.allProducts = result
             });
-            
+
+            self.dataSvc.getProductTypes().then(function (result) {
+                self.$scope.allProductTypes = result;
+            });
+
+            self.$scope.createProduct = function (newProduct) {
+                self.dataSvc.createProduct(newProduct).then(function (result) {
+                    self.$scope.allProducts.push(result);
+                });
+            };
         };
 
         static $inject = ['$scope', 'administrationSvc' ];

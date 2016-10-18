@@ -3,6 +3,14 @@
 <a href="#administration/product/add">Add new</a>
 
 <table>
+    <tr>
+        <th>Name</th>
+        <th>Details</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>In Stock</th>
+        <th>Is Deleted</th>
+    </tr>
     <tr ng-repeat="product in allProducts">
         <td>
             {{product.Name}}
@@ -17,10 +25,10 @@
             {{product.Price}}
         </td>
         <td>
-            {{product.InStock}}
+            <input type="checkbox" ng-model="product.InStock"/>
         </td>
         <td>
-            {{product.IsDeleted}}
+            <input type="checkbox" ng-model="product.IsDeleted"/>
         </td>
     </tr>
 </table>

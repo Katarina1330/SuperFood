@@ -14,6 +14,7 @@ module SuperFood.AdministrationApp {
         private getProductTypeApiPath: string;
         private createProductTypeApiPath: string;
         private getProductApiPath: string;
+        private createProductApiPath: string;
         private allProductTypes: Array<SuperFood.AdministrationApp.Models.ProductType>;
 
         /**
@@ -26,6 +27,7 @@ module SuperFood.AdministrationApp {
             this.getProductTypeApiPath = "ProductType/GetAll";
             this.createProductTypeApiPath = "ProductType/Create";
             this.getProductApiPath = "Product/GetAll";
+            this.createProductApiPath = "Product/Create";
             this.httpService = $http;
             this.qService = $q;
         }
@@ -67,6 +69,19 @@ module SuperFood.AdministrationApp {
 
             return deferred.promise;
         }
+
+        public createProduct(newProduct): ng.IPromise<any> {
+            var self = this;
+            var deferred = self.qService.defer();
+
+            self.httpService.post(self.createProductApiPath, newProduct).then(function (result) {
+                deferred.resolve(result.data);
+            }, function (error) {
+                deferred.reject(error);
+            });
+
+            return deferred.promise;
+        };
 
         public deleteById(apiPath: string): ng.IPromise<any> {
 

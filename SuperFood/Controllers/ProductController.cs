@@ -36,5 +36,7 @@ namespace SuperFood.Controllers
             }).ToList();
             return Json(viewModels, JsonRequestBehavior.AllowGet);
         }
+
+       
     }
 }
