@@ -37,6 +37,23 @@ namespace SuperFood.Controllers
             return Json(viewModels, JsonRequestBehavior.AllowGet);
         }
 
-       
+        [HttpPost]
+        public JsonResult CreateProduct(ProductViewModel newProduct)
+        {
+            var product = new Product();
+
+            product.Id = newProduct.Id;
+            product.Name = newProduct.Name;
+            product.Details = newProduct.Details;
+            product.Description = newProduct.Description;
+            product.Price = newProduct.Price;
+            product.InStock = newProduct.InStock;
+            product.IsDeleted = newProduct.IsDeleted;
+            product.ProductTypeId = newProduct.ProductType.Id;
+
+            _repositoryService.Create(product);
+            newProduct.Id = product.Id;
+            return Json(newProduct);
+        }
     }
 }
