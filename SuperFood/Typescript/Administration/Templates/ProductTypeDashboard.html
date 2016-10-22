@@ -1,5 +1,9 @@
-﻿<h3>Product Type Dashboard</h3>
-<form  class="form-inline">
+﻿<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<h3>Product Type Dashboard</h3>
+<form class="form-inline">
     <div class="form-group">
         <input class="form-control" type="text" ng-model="newProductType.Name" placeholder="Add Name" />
     </div>
@@ -20,7 +24,9 @@
             {{productType.Description}}
         </td>
         <td>
-            <a href="" ng-click="deleteProductType(productType.Id)">Delete</a>
+            <a href="" ng-click="deleteProductType(productType.Id)">
+                <i class="material-icons">delete</i>
+            </a>
         </td>
     </tr>
 </table>

@@ -1,26 +1,45 @@
-﻿<h3>Order Dashboard</h3>
+﻿<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="../../../Content/products.css" />
+</head>
 
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Price</th>
-        <th>Date</th>
-        <th>IsNotified</th>
-    </tr>
+<h3>Order Dashboard</h3>
 
-    <tr ng-repeat="order in allOrders">
-        <td>
-            {{order.Id}}
-        </td>
-        <td>
-            {{order.Price}}
-        </td>
-        <td>
-            {{order.Date}}
-        </td>
-        <td>
-            {{order.IsNotified}}
-        </td>
-    </tr>
+<div class="loads container col-sm-12" style="width: 98% !important;">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-view-container">
 
-</table>
+                <table class="table-view">
+                    <thead class="table-view-header">
+                        <tr>
+                            <th>Id</th>
+                            <th>Price</th>
+                            <th>Date</th>
+                            <th>IsNotified</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table-view-body">
+                        <tr class="products" ng-repeat="order in allOrders">
+                            <td>
+                                {{order.Id}}
+                            </td>
+                            <td>
+                                {{order.Price}}
+                            </td>
+                            <td>
+                                {{order.Date}}
+                            </td>
+                            <td>
+                                <input type="checkbox" ng-model="order.IsNotified" />
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
