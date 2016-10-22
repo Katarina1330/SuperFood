@@ -1,0 +1,26 @@
+﻿<h3>Order Dashboard</h3>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Price</th>
+        <th>Date</th>
+        <th>IsNotified</th>
+    </tr>
+
+    <tr ng-repeat="order in allOrders">
+        <td>
+            {{order.Id}}
+        </td>
+        <td>
+            {{order.Price}}
+        </td>
+        <td>
+            {{order.Date}}
+        </td>
+        <td>
+            {{order.IsNotified}}
+        </td>
+    </tr>
+
+</table>

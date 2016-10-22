@@ -22,6 +22,7 @@ var SuperFood;
                 this.getProductApiPath = "Product/GetAll";
                 this.createProductApiPath = "Product/Create";
                 this.updateProductApiPath = "Product/Update";
+                this.getOrderApiPath = "Order/GetAll";
                 this.httpService = $http;
                 this.qService = $q;
             }
@@ -95,6 +96,17 @@ var SuperFood;
                 var deferred = self.qService.defer();
                 self.httpService.post(self.updateProductApiPath, product).then(function (result) {
                     deferred.resolve(result);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+                return deferred.promise;
+            };
+            ;
+            AdministrationSvc.prototype.getOrders = function () {
+                var self = this;
+                var deferred = self.qService.defer();
+                self.httpService.get(self.getOrderApiPath).then(function (result) {
+                    deferred.resolve(result.data);
                 }, function (error) {
                     deferred.reject(error);
                 });

@@ -1065,6 +1065,7 @@
     <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Typescript\Administration\Templates\AddProduct.html" />
+    <Content Include="Typescript\Administration\Templates\OrderDashboard.html" />
     <Content Include="Typescript\Administration\Templates\ProductDashboard.html" />
     <Content Include="Typescript\Administration\Templates\ProductTypeDashboard.html" />
     <Content Include="Web.config">
@@ -1135,9 +1136,11 @@
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Typescript\Administration\administrationApp.ts" />
+    <TypeScriptCompile Include="Typescript\Administration\Controllers\OrderCtrl.ts" />
     <TypeScriptCompile Include="Typescript\Administration\Controllers\ProductCtrl.ts" />
     <TypeScriptCompile Include="Typescript\Administration\Controllers\ProductTypeCtrl.ts" />
     <TypeScriptCompile Include="Typescript\Administration\Interfaces\IAdministrationScope.ts" />
+    <TypeScriptCompile Include="Typescript\Administration\Models\Order.ts" />
     <TypeScriptCompile Include="Typescript\Administration\Models\Product.ts" />
     <TypeScriptCompile Include="Typescript\Administration\Models\ProductType.ts" />
     <TypeScriptCompile Include="Typescript\Administration\Services\AdministrationSvc.ts" />

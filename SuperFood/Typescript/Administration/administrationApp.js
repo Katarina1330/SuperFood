@@ -17,6 +17,7 @@ var SuperFood;
                     .when("/administration/producttypes", { templateUrl: "../Typescript/Administration/Templates/ProductTypeDashboard.html", controller: "productTypeCtrl" })
                     .when("/administration/product", { templateUrl: "../Typescript/Administration/Templates/ProductDashboard.html", controller: "productCtrl" })
                     .when("/administration/product/add", { templateUrl: "../Typescript/Administration/Templates/AddProduct.html", controller: "productCtrl" })
+                    .when("/administration/order", { templateUrl: "../Typescript/Administration/Templates/OrderDashboard.html", controller: "orderCtrl" })
                     .otherwise({ redirectTo: '/admin/dashboard' });
             }
             return Config;
@@ -29,7 +30,8 @@ var SuperFood;
             .config(Config)
             .factory('administrationSvc', ['$http', '$q', SuperFood.AdministrationApp.AdministrationSvc.factory])
             .controller('productTypeCtrl', SuperFood.AdministrationApp.ProductTypeCtrl)
-            .controller('productCtrl', SuperFood.AdministrationApp.ProductCtrl);
+            .controller('productCtrl', SuperFood.AdministrationApp.ProductCtrl)
+            .controller('orderCtrl', SuperFood.AdministrationApp.OrderCtrl);
     })(AdministrationApp = SuperFood.AdministrationApp || (SuperFood.AdministrationApp = {}));
 })(SuperFood || (SuperFood = {}));
 //# sourceMappingURL=administrationApp.js.map
