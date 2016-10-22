@@ -1,5 +1,6 @@
 ﻿<head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="../../../Content/products.css" />
 </head>
 
 <h3>Product Type Dashboard</h3>
@@ -12,21 +13,42 @@
     </div>
     <button class="btn btn-primary" type="button" ng-click="addNewProductType(newProductType)">Add New</button>
 </form>
-<table>
-    <tr ng-repeat="productType in allProductTypes">
-        <td>
-            {{productType.Id}}
-        </td>
-        <td>
-            {{productType.Name}}
-        </td>
-        <td>
-            {{productType.Description}}
-        </td>
-        <td>
-            <a href="" ng-click="deleteProductType(productType.Id)">
-                <i class="material-icons">delete</i>
-            </a>
-        </td>
-    </tr>
-</table>
+
+<div class="products container col-sm-12" style="width: 98% !important;">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-view-container">
+
+                <table class="table-view">
+                    <thead class="table-view-header">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-view-body">
+                        <tr  class="products" ng-repeat="productType in allProductTypes" ng-class="{lightgrey: $index % 2 != 0}">
+                            <td>
+                                {{productType.Id}}
+                            </td>
+                            <td>
+                                {{productType.Name}}
+                            </td>
+                            <td>
+                                {{productType.Description}}
+                            </td>
+                            <td>
+                                <a href="" ng-click="deleteProductType(productType.Id)">
+                                    <i class="material-icons">delete</i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
