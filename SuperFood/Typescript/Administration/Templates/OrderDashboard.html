@@ -5,6 +5,22 @@
 
 <h3>Orders </h3>
 
+<div class="col-xs-12 col-md-3">
+    <form class="field ng-pristine ng-valid">
+        <div class="form-group">
+            <div class="input-group">
+                <label class="sr-only" for="search">Search</label>
+                <input type="text" class="form-control ng-pristine ng-valid ng-touched" id="search" placeholder="Search Orders" ng-model="searchQuery" style="">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <span class="material-icons" aria-hidden="true">search</span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </form>
+</div>
+
 <div class="products container col-sm-12" style="width: 98% !important;">
     <div class="row">
         <div class="col-xs-12">
@@ -22,7 +38,7 @@
                     </thead>
 
                     <tbody class="table-view-body">
-                        <tr class="products" ng-repeat="order in allOrders" ng-class="{lightgrey: $index % 2 != 0}">
+                        <tr class="products" ng-repeat="order in allOrders | filter: searchQuery" ng-class="{lightgrey: $index % 2 != 0}">
                             <td class="fab-cell">
                                 <div class="fab">
                                     <a href="">
