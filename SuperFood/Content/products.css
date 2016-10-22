@@ -6893,6 +6893,11 @@ tbody .table-view-body {
   /* Card */
   /* Table */
   /* Extras */ }
+.product-types.container{
+     margin-right: 15px !important;
+    padding-top: 15px !important;
+    padding-left: 0px !important;
+}
   .products.container, .products.controls-table {
     margin-left: 15px !important;
     margin-right: 15px !important;

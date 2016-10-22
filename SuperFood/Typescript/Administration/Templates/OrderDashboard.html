@@ -13,6 +13,7 @@
                 <table class="table-view">
                     <thead class="table-view-header">
                         <tr>
+                            <th class="space"></th>
                             <th>Id</th>
                             <th>Price</th>
                             <th>Date</th>
@@ -22,6 +23,13 @@
 
                     <tbody class="table-view-body">
                         <tr class="products" ng-repeat="order in allOrders" ng-class="{lightgrey: $index % 2 != 0}">
+                            <td class="fab-cell">
+                                <div class="fab">
+                                    <a href="">
+                                        <i class="material-icons">description</i>
+                                    </a>
+                                </div>
+                            </td>
                             <td>
                                 {{order.Id}}
                             </td>

@@ -15,6 +15,7 @@
                 <table class="table-view">
                     <thead class="table-view-header">
                         <tr>
+                            <th class="space"></th>
                             <th>Name</th>
                             <th>Details</th>
                             <th>Description</th>
@@ -25,6 +26,13 @@
                     </thead>
                     <tbody class="table-view-body">
                         <tr class="products" ng-repeat="product in allProducts" ng-class="{lightgrey: $index % 2 != 0}">
+                            <td class="fab-cell">
+                                <div class="fab">
+                                    <a href="">
+                                        <i class="material-icons">description</i>
+                                    </a>
+                                </div>
+                            </td>
                             <td>
                                 {{product.Name}}
                             </td>
