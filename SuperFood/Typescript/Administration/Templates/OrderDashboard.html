@@ -3,9 +3,9 @@
     <link rel="stylesheet" type="text/css" href="../../../Content/products.css" />
 </head>
 
-<h3>Order Dashboard</h3>
+<h3>Orders </h3>
 
-<div class="loads container col-sm-12" style="width: 98% !important;">
+<div class="products container col-sm-12" style="width: 98% !important;">
     <div class="row">
         <div class="col-xs-12">
             <div class="table-view-container">
@@ -16,12 +16,12 @@
                             <th>Id</th>
                             <th>Price</th>
                             <th>Date</th>
-                            <th>IsNotified</th>
+                            <th>Is Notified</th>
                         </tr>
                     </thead>
 
                     <tbody class="table-view-body">
-                        <tr class="products" ng-repeat="order in allOrders">
+                        <tr class="products" ng-repeat="order in allOrders" ng-class="{lightgrey: $index % 2 != 0}">
                             <td>
                                 {{order.Id}}
                             </td>
@@ -43,3 +43,4 @@
         </div>
     </div>
 </div>
+

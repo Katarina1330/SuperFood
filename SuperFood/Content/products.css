@@ -6942,3 +6942,6 @@ tbody .table-view-body {
   .products .note-add button {
     color: #6c62e9; }
 
+   .lightgrey {
+        background-color: lightgrey;
+    }
