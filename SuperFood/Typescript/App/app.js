@@ -20,3 +20,4 @@ var SuperFood;
             .config(Config);
     })(App = SuperFood.App || (SuperFood.App = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=app.js.map

@@ -25,10 +25,10 @@
             {{product.Price}}
         </td>
         <td>
-            <input type="checkbox" ng-model="product.InStock"/>
+            <input type="checkbox" ng-model="product.InStock" ng-change="updateProductDetails(product)"/>
         </td>
         <td>
-            <input type="checkbox" ng-model="product.IsDeleted"/>
+            <input type="checkbox" ng-model="product.IsDeleted" ng-change="updateProductDetails(product)"/>
         </td>
     </tr>
 </table>

@@ -31,7 +31,7 @@ namespace SuperFood.Controllers
                 Description = m.Description,
                 Price = m.Price,
                 InStock = m.InStock,
-                ProductType = new ProductTypeViewModel { Id = m.ProductType.Id, Name = m.ProductType.Name},
+                ProductType = new ProductTypeViewModel { Id = m.ProductType.Id, Name = m.ProductType.Name },
                 IsDeleted = m.IsDeleted
             }).ToList();
             return Json(viewModels, JsonRequestBehavior.AllowGet);
@@ -54,6 +54,24 @@ namespace SuperFood.Controllers
             _repositoryService.Create(product);
             newProduct.Id = product.Id;
             return Json(newProduct);
+        }
+
+        [HttpPost]
+        public void Update(ProductViewModel product)
+        {
+            var productEntity = new Product
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Details = product.Details,
+                Description = product.Description,
+                Price = product.Price,
+                InStock = product.InStock,
+                IsDeleted = product.IsDeleted,
+                ProductTypeId = product.ProductType.Id
+            };
+
+            _repositoryService.Updata(productEntity);
         }
     }
 }

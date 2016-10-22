@@ -21,6 +21,7 @@ var SuperFood;
                 this.createProductTypeApiPath = "ProductType/Create";
                 this.getProductApiPath = "Product/GetAll";
                 this.createProductApiPath = "Product/Create";
+                this.updateProductApiPath = "Product/Update";
                 this.httpService = $http;
                 this.qService = $q;
             }
@@ -89,6 +90,17 @@ var SuperFood;
                 return deferred.promise;
             };
             ;
+            AdministrationSvc.prototype.updateProduct = function (product) {
+                var self = this;
+                var deferred = self.qService.defer();
+                self.httpService.post(self.updateProductApiPath, product).then(function (result) {
+                    deferred.resolve(result);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+                return deferred.promise;
+            };
+            ;
             /**
              * factory method for instantiating data service.
              * @param {ng.IHttpService} $http is IHttpService.
@@ -103,3 +115,4 @@ var SuperFood;
         AdministrationApp.AdministrationSvc = AdministrationSvc;
     })(AdministrationApp = SuperFood.AdministrationApp || (SuperFood.AdministrationApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=AdministrationSvc.js.map

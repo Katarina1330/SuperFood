@@ -8,6 +8,7 @@ module SuperFood.AdministrationApp.Interfaces {
         addNewProductType: any;
         deleteProductType: any;
         createProduct: any;
+        updateProductDetails: any;
         newProduct: SuperFood.AdministrationApp.Models.Product;
         allProducts: Array<SuperFood.AdministrationApp.Models.Product>;
         newProductType: SuperFood.AdministrationApp.Models.ProductType;

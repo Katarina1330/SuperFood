@@ -26,6 +26,10 @@ module SuperFood.AdministrationApp {
                     self.$scope.newProduct = null;
                 });
             };
+
+            self.$scope.updateProductDetails = function (product) {
+                self.dataSvc.updateProduct(product);
+            };
         };
 
         static $inject = ['$scope', 'administrationSvc' ];

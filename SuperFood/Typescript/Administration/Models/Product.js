@@ -15,3 +15,4 @@ var SuperFood;
         })(Models = AdministrationApp.Models || (AdministrationApp.Models = {}));
     })(AdministrationApp = SuperFood.AdministrationApp || (SuperFood.AdministrationApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=Product.js.map

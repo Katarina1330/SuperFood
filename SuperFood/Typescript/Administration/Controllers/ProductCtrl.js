@@ -25,6 +25,9 @@ var SuperFood;
                         self.$scope.newProduct = null;
                     });
                 };
+                self.$scope.updateProductDetails = function (product) {
+                    self.dataSvc.updateProduct(product);
+                };
             };
             ;
             ProductCtrl.$inject = ['$scope', 'administrationSvc'];
@@ -33,3 +36,4 @@ var SuperFood;
         AdministrationApp.ProductCtrl = ProductCtrl;
     })(AdministrationApp = SuperFood.AdministrationApp || (SuperFood.AdministrationApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=ProductCtrl.js.map
