@@ -2,8 +2,8 @@
 /// <reference path="../../../scripts/typings/angularjs/angular-route.d.ts" />
 var SuperFood;
 (function (SuperFood) {
-    var HomeDashboard;
-    (function (HomeDashboard) {
+    var HomeDashboardApp;
+    (function (HomeDashboardApp) {
         var Models;
         (function (Models) {
             var Product = (function () {
@@ -12,7 +12,6 @@ var SuperFood;
                 return Product;
             }());
             Models.Product = Product;
-        })(Models = HomeDashboard.Models || (HomeDashboard.Models = {}));
-    })(HomeDashboard = SuperFood.HomeDashboard || (SuperFood.HomeDashboard = {}));
+        })(Models = HomeDashboardApp.Models || (HomeDashboardApp.Models = {}));
+    })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=Product.js.map

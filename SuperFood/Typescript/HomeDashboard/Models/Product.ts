@@ -1,7 +1,7 @@
 ﻿/// <reference path="../../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../../scripts/typings/angularjs/angular-route.d.ts" />
 
-module SuperFood.HomeDashboard.Models {
+module SuperFood.HomeDashboardApp.Models {
 
     export class Product {
         Id: number;

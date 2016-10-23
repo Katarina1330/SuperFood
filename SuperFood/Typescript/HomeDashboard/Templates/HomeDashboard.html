@@ -1,1 +1,33 @@
-﻿<h1>Home</h1>
+﻿<h1>Top Deals</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Details</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>In Stock</th>
+            <th>Is Deleted</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="product in allProducts">
+            <td>
+                {{product.Name}}
+            </td>
+            <td>
+                {{product.Details}}
+            </td>
+            <td>
+                {{product.Price}}
+            </td>
+            <td>
+                {{product.InStock}}
+            </td>
+            <td>
+                {{product.IsDeleted}}
+            </td>
+        </tr>
+    </tbody>
+</table>

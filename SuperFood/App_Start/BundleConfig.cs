@@ -26,6 +26,7 @@ namespace SuperFood
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                       "~/Content/pruducts.css",
                       "~/Content/site.css"));
 
             //angular dependencies must be added prior to the modules
