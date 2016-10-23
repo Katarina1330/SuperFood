@@ -55,6 +55,7 @@ namespace SuperFood
                  .IncludeDirectory("~/Typescript/HomeDashboard/Services", "*.js")
                  .IncludeDirectory("~/Typescript/HomeDashboard/Controllers", "*.js")
                  .IncludeDirectory("~/Typescript/HomeDashboard/Models", "*.js")
+                 .IncludeDirectory("~/Typescript/HomeDashboard/Directives", "*.js")
                  .Include("~/Typescript/HomeDashboard/homeDashboardApp.js")
                  );
         }

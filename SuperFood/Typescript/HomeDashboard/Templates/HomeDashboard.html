@@ -1,6 +1,11 @@
-﻿<h1>Top Deals</h1>
+﻿<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="../../../Content/products.css" />
+</head>
 
-<table>
+<h1>Top Deals</h1>
+
+<!--<table>
     <thead>
         <tr>
             <th>Name</th>
@@ -33,4 +38,10 @@
             </td>
         </tr>
     </tbody>
-</table>
+</table>-->
+
+<div class="row">
+    <div ng-repeat="product in allProducts">
+        <product-dashboard-container></product-dashboard-container>
+    </div>
+</div>

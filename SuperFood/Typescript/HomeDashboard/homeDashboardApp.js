@@ -17,7 +17,8 @@ var SuperFood;
         var app = angular.module("homeDashboardApp", ['ngRoute', 'ngSanitize'])
             .config(Config)
             .factory('homeDashboardSvc', ['$http', '$q', SuperFood.HomeDashboardApp.HomeDashboardSvc.factory])
-            .controller('homeDashboardCtrl', SuperFood.HomeDashboardApp.HomeDashboardCtrl);
+            .controller('homeDashboardCtrl', SuperFood.HomeDashboardApp.HomeDashboardCtrl)
+            .directive('productDashboardContainer', SuperFood.HomeDashboardApp.ProductDashboardContainer.factory());
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
 //# sourceMappingURL=homedashboardapp.js.map
