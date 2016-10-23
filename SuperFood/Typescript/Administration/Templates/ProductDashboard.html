@@ -38,16 +38,16 @@
                     <thead class="table-view-header">
                         <tr>
                             <th class="space"></th>
-                            <th>Name</th>
-                            <th>Details</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>In Stock</th>
-                            <th>Is Deleted</th>
+                            <th class="sort-category" ng-click="applySort('Name')">Name</th>
+                            <th class="sort-category" ng-click="applySort('Details')">Details</th>
+                            <th class="sort-category" ng-click="applySort('Description')">Description</th>
+                            <th class="sort-category" ng-click="applySort('Price')">Price</th>
+                            <th class="sort-category" ng-click="applySort('InStock')">In Stock</th>
+                            <th class="sort-category" ng-click="applySort('IsDeleted')">Is Deleted</th>
                         </tr>
                     </thead>
                     <tbody class="table-view-body">
-                        <tr class="products" ng-repeat="product in allProducts| filter: searchQuery " ng-class="{lightgrey: $index % 2 != 0}">
+                        <tr class="products" ng-repeat="(productIndex, product) in allProducts| filter: searchQuery | orderBy:sortProductProperty:reverseProduct track by productIndex" ng-class="{lightgrey: $index % 2 != 0}">
                             <td class="fab-cell">
                                 <div class="fab">
                                     <a href="">

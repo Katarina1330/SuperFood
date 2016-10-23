@@ -30,6 +30,15 @@ module SuperFood.AdministrationApp {
             self.$scope.updateProductDetails = function (product) {
                 self.dataSvc.updateProduct(product);
             };
+
+            self.$scope.applySort = function (property) {
+                self.$scope.sortProductProperty = property;
+                if (self.$scope.reverseProduct === true) {
+                    self.$scope.reverseProduct = false;
+                } else {
+                    self.$scope.reverseProduct = true;
+                }
+            };
         };
 
         static $inject = ['$scope', 'administrationSvc' ];

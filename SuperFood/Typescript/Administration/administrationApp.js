@@ -34,4 +34,3 @@ var SuperFood;
             .controller('orderCtrl', SuperFood.AdministrationApp.OrderCtrl);
     })(AdministrationApp = SuperFood.AdministrationApp || (SuperFood.AdministrationApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=administrationApp.js.map

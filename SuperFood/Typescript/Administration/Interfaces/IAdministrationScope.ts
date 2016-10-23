@@ -9,6 +9,9 @@ module SuperFood.AdministrationApp.Interfaces {
         deleteProductType: any;
         createProduct: any;
         updateProductDetails: any;
+        applySort: any;
+        sortProductProperty: any;
+        reverseProduct: any;
         allOrders: Array<SuperFood.AdministrationApp.Models.Order>;
         newProduct: SuperFood.AdministrationApp.Models.Product;
         allProducts: Array<SuperFood.AdministrationApp.Models.Product>;
