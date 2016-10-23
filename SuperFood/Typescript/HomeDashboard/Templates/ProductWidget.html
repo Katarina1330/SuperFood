@@ -2,9 +2,10 @@
     <div class="media">
         <div class="media-left">
             <i class="material-icons m-icon">local_dining</i>
+            {{product.Name}}
         </div>
         <div class="media-body">
-            <h2 class="card-title">Lunch</h2>
+            <h2 class="card-title">{{product.ProductType.Name}}</h2>
         </div>
         <div class="media-right">
             <div class="media-right">
@@ -17,6 +18,6 @@
 </div>
 <div class="panel-body">
     <div class="switch">
-        <h3 class="section-title">Lunch</h3>
+        <h3 class="section-title">{{product.Description}}</h3>
     </div>
 </div>
