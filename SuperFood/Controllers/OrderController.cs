@@ -1,4 +1,5 @@
-﻿using SuperFood.Models;
+﻿using Newtonsoft.Json;
+using SuperFood.Models;
 using SuperFood.Shared.Data.Implementations;
 using SuperFood.Shared.Services.Interfaces;
 using System;
@@ -19,7 +20,7 @@ namespace SuperFood.Controllers
         }
 
         // GET: Order
-        public JsonResult GetAll()
+        public string GetAll()
         {
             var orders = _repository.Read<Order>();
 
@@ -32,7 +33,7 @@ namespace SuperFood.Controllers
                 IsNotified = m.IsNotified
             }).ToList();
 
-            return Json(viewModels, JsonRequestBehavior.AllowGet);
+            return JsonConvert.SerializeObject(viewModels);
         }
     }
 }
