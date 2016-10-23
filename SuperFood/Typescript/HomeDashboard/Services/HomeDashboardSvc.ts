@@ -7,10 +7,26 @@ module SuperFood.HomeDashboardApp {
 
         private httpService: ng.IHttpService;
         private qService: ng.IQService;
+        private getProductApiPath: string;
 
         constructor($http: ng.IHttpService, $q: ng.IQService) {
             this.httpService = $http;
             this.qService = $q;
+            this.getProductApiPath = "Dashboard/GetAllProducts";
+        }
+
+        public getProducts(): ng.IPromise<any> {
+            var self = this;
+
+            var deferred = self.qService.defer();
+
+            self.httpService.get(self.getProductApiPath).then(function (result) {
+                deferred.resolve(result.data);
+            }, function (error) {
+                deferred.reject(error);
+            });
+
+            return deferred.promise;
         }
 
 

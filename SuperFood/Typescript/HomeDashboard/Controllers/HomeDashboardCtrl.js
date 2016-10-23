@@ -13,6 +13,10 @@ var SuperFood;
                 self.init();
             }
             HomeDashboardCtrl.prototype.init = function () {
+                var self = this;
+                self.dataSvc.getProducts().then(function (result) {
+                    self.$scope.allProducts = result;
+                });
             };
             HomeDashboardCtrl.$inject = ['$scope', 'homeDashboardSvc'];
             return HomeDashboardCtrl;
@@ -20,3 +24,4 @@ var SuperFood;
         HomeDashboardApp.HomeDashboardCtrl = HomeDashboardCtrl;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=HomeDashboardCtrl.js.map

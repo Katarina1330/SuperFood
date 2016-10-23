@@ -10,7 +10,11 @@ module SuperFood.HomeDashboardApp {
         private dataSvc: SuperFood.HomeDashboardApp.HomeDashboardSvc;
 
         private init() {
+            var self = this;
 
+            self.dataSvc.getProducts().then(function (result) {
+                self.$scope.allProducts = result
+            });
         }
 
         static $inject = ['$scope', 'homeDashboardSvc'];

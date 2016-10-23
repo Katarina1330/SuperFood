@@ -15,3 +15,4 @@ var SuperFood;
         })(Models = HomeDashboardApp.Models || (HomeDashboardApp.Models = {}));
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=Product.js.map

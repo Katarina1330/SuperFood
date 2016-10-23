@@ -20,3 +20,4 @@ var SuperFood;
             .controller('homeDashboardCtrl', SuperFood.HomeDashboardApp.HomeDashboardCtrl);
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=homedashboardapp.js.map
