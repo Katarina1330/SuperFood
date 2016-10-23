@@ -20,7 +20,7 @@ module SuperFood.AdministrationApp {
 
 
                 //default route
-                .otherwise({ redirectTo: '/admin/dashboard' });
+                .otherwise({ redirectTo: '/home/dashboard' });
         }
     }
     //dependency injection -- from the constructor, typed IRouteProvider

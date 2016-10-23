@@ -16,7 +16,7 @@ var SuperFood;
         App.Config = Config;
         Config.$inject = [];
         //inject all submodules for the app
-        var app = angular.module('app', ['administrationApp'])
+        var app = angular.module('app', ['administrationApp', 'homeDashboardApp'])
             .config(Config);
     })(App = SuperFood.App || (SuperFood.App = {}));
 })(SuperFood || (SuperFood = {}));

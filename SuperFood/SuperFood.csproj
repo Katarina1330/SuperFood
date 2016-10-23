@@ -1070,6 +1070,7 @@
     <Content Include="Typescript\Administration\Templates\OrderDashboard.html" />
     <Content Include="Typescript\Administration\Templates\ProductDashboard.html" />
     <Content Include="Typescript\Administration\Templates\ProductTypeDashboard.html" />
+    <Content Include="Typescript\HomeDashboard\Templates\HomeDashboard.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1147,6 +1148,11 @@
     <TypeScriptCompile Include="Typescript\Administration\Models\ProductType.ts" />
     <TypeScriptCompile Include="Typescript\Administration\Services\AdministrationSvc.ts" />
     <TypeScriptCompile Include="Typescript\App\app.ts" />
+    <TypeScriptCompile Include="Typescript\HomeDashboard\Controllers\HomeDashboardCtrl.ts" />
+    <TypeScriptCompile Include="Typescript\HomeDashboard\homeDashboardApp.ts" />
+    <TypeScriptCompile Include="Typescript\HomeDashboard\Interfaces\IHomeDashboardScope.ts" />
+    <TypeScriptCompile Include="Typescript\HomeDashboard\Models\Product.ts" />
+    <TypeScriptCompile Include="Typescript\HomeDashboard\Services\HomeDashboardSvc.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

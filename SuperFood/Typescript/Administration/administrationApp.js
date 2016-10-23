@@ -18,7 +18,7 @@ var SuperFood;
                     .when("/administration/product", { templateUrl: "../Typescript/Administration/Templates/ProductDashboard.html", controller: "productCtrl" })
                     .when("/administration/product/add", { templateUrl: "../Typescript/Administration/Templates/AddProduct.html", controller: "productCtrl" })
                     .when("/administration/order", { templateUrl: "../Typescript/Administration/Templates/OrderDashboard.html", controller: "orderCtrl" })
-                    .otherwise({ redirectTo: '/admin/dashboard' });
+                    .otherwise({ redirectTo: '/home/dashboard' });
             }
             return Config;
         }());

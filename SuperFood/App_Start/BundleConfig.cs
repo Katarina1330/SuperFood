@@ -41,12 +41,20 @@ namespace SuperFood
             bundles.Add(new ScriptBundle("~/bundles/Javascript/SuperFoodApp")
                 .Include("~/Typescript/App/app.js"));
 
-            //site administration module
+            //administration module
             bundles.Add(new ScriptBundle("~/bundles/Javascript/SuperFoodAdministrationApp")
                  .IncludeDirectory("~/Typescript/Administration/Services", "*.js")
                  .IncludeDirectory("~/Typescript/Administration/Controllers", "*.js")
                  .IncludeDirectory("~/Typescript/Administration/Models", "*.js")
                  .Include("~/Typescript/Administration/administrationApp.js")
+                 );
+
+            //home dashboard module
+            bundles.Add(new ScriptBundle("~/bundles/Javascript/SuperFoodHomeDashboardApp")
+                 .IncludeDirectory("~/Typescript/HomeDashboard/Services", "*.js")
+                 .IncludeDirectory("~/Typescript/HomeDashboard/Controllers", "*.js")
+                 .IncludeDirectory("~/Typescript/HomeDashboard/Models", "*.js")
+                 .Include("~/Typescript/HomeDashboard/homeDashboardApp.js")
                  );
         }
     }
