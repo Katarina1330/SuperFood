@@ -1,3 +1,4 @@
+using SuperFood.Shared.Data.Models;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -29,9 +30,13 @@ namespace SuperFood.Shared.Data.Implementations
 
         public int ProductTypeId { get; set; }
 
+        public int CategoryId { get; set; }
+
         public bool IsDeleted { get; set; }
 
         public virtual ProductType ProductType { get; set; }
+
+        public virtual Category Category { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }

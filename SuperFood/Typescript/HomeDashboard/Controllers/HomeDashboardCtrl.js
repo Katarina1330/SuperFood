@@ -6,9 +6,10 @@ var SuperFood;
     var HomeDashboardApp;
     (function (HomeDashboardApp) {
         var HomeDashboardCtrl = (function () {
-            function HomeDashboardCtrl($scope, homeDashboardSvc) {
+            function HomeDashboardCtrl($scope, $window, homeDashboardSvc) {
                 var self = this;
                 self.$scope = $scope;
+                self.$window = $window;
                 self.dataSvc = homeDashboardSvc;
                 self.init();
             }
@@ -17,8 +18,18 @@ var SuperFood;
                 self.dataSvc.getProducts().then(function (result) {
                     self.$scope.allProducts = result;
                 });
+                self.$scope.postDashboardRender = function () {
+                    self.initUIComponents();
+                };
             };
-            HomeDashboardCtrl.$inject = ['$scope', 'homeDashboardSvc'];
+            HomeDashboardCtrl.prototype.initUIComponents = function () {
+                if ($('html').hasClass('salvattore')) {
+                    return;
+                }
+                this.$window.salvattore.init();
+                $('html').addClass('salvattore');
+            };
+            HomeDashboardCtrl.$inject = ['$scope', '$window', 'homeDashboardSvc'];
             return HomeDashboardCtrl;
         }());
         HomeDashboardApp.HomeDashboardCtrl = HomeDashboardCtrl;

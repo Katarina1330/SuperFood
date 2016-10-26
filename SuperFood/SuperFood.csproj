@@ -250,6 +250,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\products.css" />
+    <Content Include="Content\salvattore.css" />
     <Content Include="Content\select2.css" />
     <Content Include="Content\select2.png" />
     <Content Include="Content\select2x2.png" />
@@ -1064,6 +1065,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\salvattore.min.js" />
     <Content Include="Scripts\select2.js" />
     <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -1152,6 +1154,7 @@
     <TypeScriptCompile Include="Typescript\Administration\Services\AdministrationSvc.ts" />
     <TypeScriptCompile Include="Typescript\App\app.ts" />
     <TypeScriptCompile Include="Typescript\HomeDashboard\Controllers\HomeDashboardCtrl.ts" />
+    <TypeScriptCompile Include="Typescript\HomeDashboard\Directives\DashboardPluginsDirectives.ts" />
     <TypeScriptCompile Include="Typescript\HomeDashboard\Directives\DashboardWidgetsDirectives.ts" />
     <TypeScriptCompile Include="Typescript\HomeDashboard\homeDashboardApp.ts" />
     <TypeScriptCompile Include="Typescript\HomeDashboard\Interfaces\IHomeDashboardScope.ts" />

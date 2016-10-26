@@ -8,6 +8,7 @@ module SuperFood.HomeDashboardApp {
 
         private $scope: SuperFood.HomeDashboardApp.Interfaces.IHomeDashboardScope;
         private dataSvc: SuperFood.HomeDashboardApp.HomeDashboardSvc;
+        private $window: any;
 
         private init() {
             var self = this;
@@ -15,13 +16,27 @@ module SuperFood.HomeDashboardApp {
             self.dataSvc.getProducts().then(function (result) {
                 self.$scope.allProducts = result
             });
+
+            self.$scope.postDashboardRender = function () {
+                self.initUIComponents();
+            }
         }
 
-        static $inject = ['$scope', 'homeDashboardSvc'];
+        private initUIComponents() {
+            if ($('html').hasClass('salvattore')) {
+                return;
+            }
 
-        constructor($scope: SuperFood.HomeDashboardApp.Interfaces.IHomeDashboardScope, homeDashboardSvc: SuperFood.HomeDashboardApp.HomeDashboardSvc){
+            this.$window.salvattore.init();     
+            $('html').addClass('salvattore');
+        }
+
+        static $inject = ['$scope', '$window', 'homeDashboardSvc'];
+
+        constructor($scope: SuperFood.HomeDashboardApp.Interfaces.IHomeDashboardScope, $window: any, homeDashboardSvc: SuperFood.HomeDashboardApp.HomeDashboardSvc){
             var self = this;
             self.$scope = $scope;
+            self.$window = $window;
             self.dataSvc = homeDashboardSvc;
             self.init();
         }

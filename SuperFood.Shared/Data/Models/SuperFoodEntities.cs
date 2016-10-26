@@ -1,3 +1,4 @@
+using SuperFood.Shared.Data.Models;
 using System.Data.Entity;
 
 namespace SuperFood.Shared.Data.Implementations
@@ -13,6 +14,7 @@ namespace SuperFood.Shared.Data.Implementations
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
+        public virtual DbSet<Category> Caregories { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -33,6 +35,9 @@ namespace SuperFood.Shared.Data.Implementations
                 .HasMany(e => e.Products)
                 .WithRequired(e => e.ProductType)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Category>()
+               .HasMany(e => e.Products);
         }
     }
 }

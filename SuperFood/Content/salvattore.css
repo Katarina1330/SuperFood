@@ -1,0 +1,29 @@
+#grid[data-columns]::before {
+	content: '3 .column.size-1of3';
+}
+
+/* These are the classes that are going to be applied: */
+.column { float: left; }
+.size-1of3 { width: 33.333%; }
+
+@media (max-width: 767px) {
+  .grid[data-columns]::before {
+    content: '1 .col-xs-12'; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .grid[data-columns]::before {
+    content: '2 .col-sm-6'; } }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .grid[data-columns]::before {
+    content: '3 .col-md-4'; } }
+
+@media (min-width: 1200px) {
+  .grid[data-columns]::before {
+    content: '4 .col-lg-3'; } }
+
+/* Again, you’re free to use and define the classes: */
+.column { float: left; }
+.size-1of1 { width: 100%; }
+.size-1of2 { width: 50%; }
+.size-1of3 { width: 33.333%; }
