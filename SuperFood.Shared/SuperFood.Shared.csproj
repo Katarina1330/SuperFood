@@ -52,12 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Implementations\SuperFoodEntities.cs" />
+    <Compile Include="Data\Interfaces\ISuperFoodEntities.cs" />
     <Compile Include="Data\Models\Category.cs" />
     <Compile Include="Data\Models\Order.cs" />
     <Compile Include="Data\Models\Product.cs" />
     <Compile Include="Data\Models\ProductType.cs" />
     <Compile Include="Data\Models\SuperFoodEntities.cs" />
-    <Compile Include="Data\Interfaces\ISuperFoodEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Implementations\RepositoryService.cs" />
     <Compile Include="Services\Interfaces\IRepositoryService.cs" />

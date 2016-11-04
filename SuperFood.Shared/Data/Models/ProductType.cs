@@ -1,9 +1,12 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Spatial;
 
-namespace SuperFood.Shared.Data.Implementations
+namespace SuperFood.Shared.Data.Models
 {
+
     [Table("ProductType")]
     public partial class ProductType
     {

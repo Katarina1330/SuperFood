@@ -1,4 +1,4 @@
-﻿using SuperFood.Shared.Data.Implementations;
+﻿using SuperFood.Shared.Data.Models;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 

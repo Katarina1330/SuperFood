@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using SuperFood.Models;
-using SuperFood.Shared.Data.Implementations;
 using SuperFood.Shared.Services.Interfaces;
 using System;
 using System.Collections.Generic;

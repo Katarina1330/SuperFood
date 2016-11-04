@@ -1,10 +1,12 @@
-using SuperFood.Shared.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Spatial;
 
-namespace SuperFood.Shared.Data.Implementations
+namespace SuperFood.Shared.Data.Models
 {
+
     [Table("Product")]
     public partial class Product
     {
@@ -12,6 +14,7 @@ namespace SuperFood.Shared.Data.Implementations
         public Product()
         {
             Orders = new HashSet<Order>();
+            Categories = new HashSet<Category>();
         }
 
         public int Id { get; set; }
@@ -30,15 +33,14 @@ namespace SuperFood.Shared.Data.Implementations
 
         public int ProductTypeId { get; set; }
 
-        public int CategoryId { get; set; }
-
         public bool IsDeleted { get; set; }
 
         public virtual ProductType ProductType { get; set; }
 
-        public virtual Category Category { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Category> Categories { get; set; }
     }
 }

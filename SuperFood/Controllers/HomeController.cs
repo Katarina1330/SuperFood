@@ -1,5 +1,4 @@
-﻿using SuperFood.Shared.Data.Implementations;
-using SuperFood.Shared.Services.Interfaces;
+﻿using SuperFood.Shared.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

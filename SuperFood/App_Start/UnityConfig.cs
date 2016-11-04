@@ -1,6 +1,6 @@
 using Microsoft.Practices.Unity;
-using SuperFood.Shared.Data.Implementations;
 using SuperFood.Shared.Data.Interfaces;
+using SuperFood.Shared.Data.Models;
 using SuperFood.Shared.Services.Implementations;
 using SuperFood.Shared.Services.Interfaces;
 using System;
