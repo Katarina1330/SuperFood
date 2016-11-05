@@ -6,10 +6,10 @@ module SuperFood.HomeDashboardApp.Models {
     export class Product {
         Id: number;
         Name: string;
-        Details: string;
         Description: string;
         Price: number;
         InStock: boolean;
+        Details: Array<string>;
         ProductType: SuperFood.AdministrationApp.Models.ProductType;
         IsDeleted: boolean;
         Amount: number;

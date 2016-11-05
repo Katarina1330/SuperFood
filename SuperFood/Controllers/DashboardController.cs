@@ -33,7 +33,7 @@ namespace SuperFood.Controllers
                 Id = m.Id,
                 Name = m.Name,
                 Description = m.Description,
-                Details = m.Details,
+                Details = m.Details.Split(';'),
                 InStock = m.InStock,
                 IsDeleted = m.IsDeleted,
                 Price = m.Price,
@@ -44,13 +44,6 @@ namespace SuperFood.Controllers
                 }
             });
 
-            //var a1 = new ProductViewModel { Id = 1, Name = "Name1", ProductType = new ProductTypeViewModel { Id = 1, Name = "11" } };
-            //var a2 = new ProductViewModel { Id = 2, Name = "Name2", ProductType = new ProductTypeViewModel { Id = 2, Name = "12" } };
-            //var a3 = new ProductViewModel { Id = 3, Name = "Name3", ProductType = new ProductTypeViewModel { Id = 3, Name = "13" } };
-            //var a4 = new ProductViewModel { Id = 2, Name = "Name2", ProductType = new ProductTypeViewModel { Id = 2, Name = "12" } };
-            //var a5 = new ProductViewModel { Id = 3, Name = "Name3", ProductType = new ProductTypeViewModel { Id = 3, Name = "13" } };
-
-            //var allProductsViewModel = new List<ProductViewModel> { a1, a2, a3, a4, a5 };
             return JsonConvert.SerializeObject(allProductsViewModel);
         }
     }

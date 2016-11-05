@@ -27,7 +27,7 @@ namespace SuperFood.Controllers
             {
                 Id = m.Id,
                 Name = m.Name,
-                Details = m.Details,
+                Details = m.Details.Split(';'),
                 Description = m.Description,
                 Price = m.Price,
                 InStock = m.InStock,
@@ -44,7 +44,7 @@ namespace SuperFood.Controllers
 
             product.Id = newProduct.Id;
             product.Name = newProduct.Name;
-            product.Details = newProduct.Details;
+            product.Details = string.Join(";",newProduct.Details);
             product.Description = newProduct.Description;
             product.Price = newProduct.Price;
             product.InStock = newProduct.InStock;
@@ -63,7 +63,7 @@ namespace SuperFood.Controllers
             {
                 Id = product.Id,
                 Name = product.Name,
-                Details = product.Details,
+                Details = string.Join(";", product.Details),
                 Description = product.Description,
                 Price = product.Price,
                 InStock = product.InStock,
