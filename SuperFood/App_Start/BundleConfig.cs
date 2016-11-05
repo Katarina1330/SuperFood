@@ -36,6 +36,7 @@ namespace SuperFood
                 .Include("~/Scripts/angular-ui.js")
                 .Include("~/Scripts/angular-sanitize.js")     //use 1.2.8 version of sanitize to avoid spurious console c.scope is not a function error
                 .Include("~/Scripts/angular-animate.js")
+                .Include("~/Scripts/ui-bootstrap-tpls-2.2.0.min.js")
                 );
 
             //angular app

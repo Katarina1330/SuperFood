@@ -26,4 +26,3 @@ var SuperFood;
         HomeDashboardApp.AfterRenderDashboard = AfterRenderDashboard;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=DashboardPluginsDirectives.js.map

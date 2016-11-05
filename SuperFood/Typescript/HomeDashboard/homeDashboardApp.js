@@ -14,7 +14,7 @@ var SuperFood;
         }());
         HomeDashboardApp.Config = Config;
         Config.$inject = ['$routeProvider'];
-        var app = angular.module("homeDashboardApp", ['ngRoute', 'ngSanitize'])
+        var app = angular.module("homeDashboardApp", ['ngRoute', 'ngSanitize', 'ui.bootstrap'])
             .config(Config)
             .factory('homeDashboardSvc', ['$http', '$q', SuperFood.HomeDashboardApp.HomeDashboardSvc.factory])
             .controller('homeDashboardCtrl', SuperFood.HomeDashboardApp.HomeDashboardCtrl)
@@ -22,4 +22,3 @@ var SuperFood;
             .directive('afterRenderDashboard', SuperFood.HomeDashboardApp.AfterRenderDashboard.factory());
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=homedashboardapp.js.map

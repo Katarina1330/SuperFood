@@ -6360,8 +6360,7 @@ button {
   padding: 0; }
 
 .material-icons {
-  vertical-align: middle;
-  margin-top: -8px; }
+  vertical-align: middle; }
 
 .btn .material-icons, .table-view-body .overflow .material-icons {
   font-size: 20px;

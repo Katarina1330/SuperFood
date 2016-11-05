@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\CategoryConst.cs" />
     <Compile Include="Data\Implementations\SuperFoodEntities.cs" />
     <Compile Include="Data\Interfaces\ISuperFoodEntities.cs" />
     <Compile Include="Data\Models\Category.cs" />

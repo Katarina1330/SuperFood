@@ -15,7 +15,7 @@ module SuperFood.HomeDashboardApp {
 
     Config.$inject = ['$routeProvider'];
 
-    var app = angular.module("homeDashboardApp", ['ngRoute', 'ngSanitize'])
+    var app = angular.module("homeDashboardApp", ['ngRoute', 'ngSanitize', 'ui.bootstrap'])
         .config(Config)
         .factory('homeDashboardSvc', ['$http', '$q', SuperFood.HomeDashboardApp.HomeDashboardSvc.factory])
         .controller('homeDashboardCtrl', SuperFood.HomeDashboardApp.HomeDashboardCtrl)
