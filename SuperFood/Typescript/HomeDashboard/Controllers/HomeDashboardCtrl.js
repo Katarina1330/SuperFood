@@ -26,7 +26,9 @@ var SuperFood;
                         product.Amount = 1;
                     }
                     else {
-                        product.Amount += 1;
+                        if (product.Amount < 10) {
+                            product.Amount += 1;
+                        }
                     }
                 };
                 self.$scope.downSpinner = function (product) {

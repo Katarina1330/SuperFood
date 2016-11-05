@@ -25,7 +25,9 @@ module SuperFood.HomeDashboardApp {
                 if (!product.Amount) {
                     product.Amount = 1;
                 } else {
-                    product.Amount += 1;
+                    if (product.Amount < 10) {
+                        product.Amount += 1;
+                    }
                 }
             }
 
@@ -43,14 +45,14 @@ module SuperFood.HomeDashboardApp {
                 return;
             }
 
-            this.$window.salvattore.init();     
+            this.$window.salvattore.init();
             $('html').addClass('salvattore');
         }
 
 
         static $inject = ['$scope', '$window', 'homeDashboardSvc'];
 
-        constructor($scope: SuperFood.HomeDashboardApp.Interfaces.IHomeDashboardScope, $window: any, homeDashboardSvc: SuperFood.HomeDashboardApp.HomeDashboardSvc){
+        constructor($scope: SuperFood.HomeDashboardApp.Interfaces.IHomeDashboardScope, $window: any, homeDashboardSvc: SuperFood.HomeDashboardApp.HomeDashboardSvc) {
             var self = this;
             self.$scope = $scope;
             self.$window = $window;
