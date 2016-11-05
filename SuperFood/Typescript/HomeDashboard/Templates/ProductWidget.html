@@ -30,4 +30,9 @@
             </ul>
         </div>
     </uib-accordion>
+    <div>
+        <button class="btn btn-default btn-xs" ng-click="upSpinner(product)"><i class="material-icons settings">add</i></button>
+        <input type="text" ng-model="product.Amount" placeholder="0" readonly />
+        <button class="btn btn-default btn-xs" ng-click="downSpinner(product)"><i class="material-icons settings">remove</i></button>
+    </div>
 </div>

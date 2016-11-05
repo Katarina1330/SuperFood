@@ -12,5 +12,6 @@ module SuperFood.HomeDashboardApp.Models {
         InStock: boolean;
         ProductType: SuperFood.AdministrationApp.Models.ProductType;
         IsDeleted: boolean;
+        Amount: number;
     }
 }

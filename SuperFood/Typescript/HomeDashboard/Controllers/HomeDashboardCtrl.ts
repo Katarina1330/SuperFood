@@ -14,11 +14,27 @@ module SuperFood.HomeDashboardApp {
             var self = this;
 
             self.dataSvc.getProducts().then(function (result) {
-                self.$scope.allProducts = result
+                self.$scope.allProducts = <Array<SuperFood.HomeDashboardApp.Models.Product>>result
             });
 
             self.$scope.postDashboardRender = function () {
                 self.initUIComponents();
+            }
+
+            self.$scope.upSpinner = function (product) {
+                if (!product.Amount) {
+                    product.Amount = 1;
+                } else {
+                    product.Amount += 1;
+                }
+            }
+
+            self.$scope.downSpinner = function (product) {
+                if (!product.Amount) {
+                    product.Amount = 0;
+                } else {
+                    product.Amount -= 1;
+                }
             }
         }
 
@@ -30,6 +46,7 @@ module SuperFood.HomeDashboardApp {
             this.$window.salvattore.init();     
             $('html').addClass('salvattore');
         }
+
 
         static $inject = ['$scope', '$window', 'homeDashboardSvc'];
 

@@ -21,6 +21,22 @@ var SuperFood;
                 self.$scope.postDashboardRender = function () {
                     self.initUIComponents();
                 };
+                self.$scope.upSpinner = function (product) {
+                    if (!product.Amount) {
+                        product.Amount = 1;
+                    }
+                    else {
+                        product.Amount += 1;
+                    }
+                };
+                self.$scope.downSpinner = function (product) {
+                    if (!product.Amount) {
+                        product.Amount = 0;
+                    }
+                    else {
+                        product.Amount -= 1;
+                    }
+                };
             };
             HomeDashboardCtrl.prototype.initUIComponents = function () {
                 if ($('html').hasClass('salvattore')) {
