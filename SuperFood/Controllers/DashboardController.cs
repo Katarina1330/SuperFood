@@ -38,12 +38,15 @@ namespace SuperFood.Controllers
                 IsDeleted = m.IsDeleted,
                 Price = m.Price,
                 Topings = m.Topings?.Split(';'),
+                Image = m.Image,
                 ProductType = new ProductTypeViewModel
                 {
                     Id = m.ProductTypeId,
                     Name = m.ProductType.Name
                 }
             });
+
+
 
             return JsonConvert.SerializeObject(allProductsViewModel);
         }

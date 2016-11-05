@@ -38,6 +38,14 @@ module SuperFood.HomeDashboardApp {
                     product.Amount -= 1;
                 }
             }
+
+            self.$scope.isImageEmpty = function (image) {
+                if (!image || image == "") {
+                    return false;
+                }
+
+                return true;
+            }
         }
 
         private initUIComponents() {

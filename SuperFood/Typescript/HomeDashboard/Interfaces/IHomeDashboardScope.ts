@@ -6,6 +6,7 @@ module SuperFood.HomeDashboardApp.Interfaces {
         postDashboardRender: any;
         upSpinner: any;
         downSpinner: any;
+        isImageEmpty: any;
         allProducts: Array<SuperFood.HomeDashboardApp.Models.Product>;
     }
 }

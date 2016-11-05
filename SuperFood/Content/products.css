@@ -4760,6 +4760,10 @@ a.thumbnail.active {
   display: table-cell;
   vertical-align: top; }
 
+.media-left .product-img {
+    width: 100px;
+    border-radius: 20px;
+}
 .media-middle {
   vertical-align: middle; }
 

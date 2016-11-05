@@ -2,7 +2,8 @@
 <div class="panel-heading card-header">
     <div class="media">
         <div class="media-left">
-            <i class="material-icons m-icon">local_dining</i>
+            <i class="material-icons m-icon" ng-hide="isImageEmpty(product.Image)">local_dining</i>
+            <img class="product-img" ng-show="isImageEmpty(product.Image)" src="../../../Images/{{product.Image}}" />
             {{product.ProductType.Name}}
         </div>
         <div class="media-body">

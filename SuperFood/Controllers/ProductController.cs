@@ -21,13 +21,13 @@ namespace SuperFood.Controllers
         [HttpGet]
         public JsonResult GetAll()
         {
-            var products = _repositoryService.Read<Product>();
+            var products = _repositoryService.Read<Product>().ToList();
 
             var viewModels = products.Select(m => new ProductViewModel
             {
                 Id = m.Id,
                 Name = m.Name,
-                Details = m.Details.Split(';'),
+                Details = m.Details?.Split(';'),
                 Description = m.Description,
                 Price = m.Price,
                 InStock = m.InStock,

@@ -13,5 +13,6 @@ module SuperFood.HomeDashboardApp.Models {
         ProductType: SuperFood.AdministrationApp.Models.ProductType;
         IsDeleted: boolean;
         Amount: number;
+        Image: string;
     }
 }

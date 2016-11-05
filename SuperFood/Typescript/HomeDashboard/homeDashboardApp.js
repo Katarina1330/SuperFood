@@ -22,4 +22,3 @@ var SuperFood;
             .directive('afterRenderDashboard', SuperFood.HomeDashboardApp.AfterRenderDashboard.factory());
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=homedashboardapp.js.map

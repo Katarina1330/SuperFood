@@ -39,6 +39,12 @@ var SuperFood;
                         product.Amount -= 1;
                     }
                 };
+                self.$scope.isImageEmpty = function (image) {
+                    if (!image || image == "") {
+                        return false;
+                    }
+                    return true;
+                };
             };
             HomeDashboardCtrl.prototype.initUIComponents = function () {
                 if ($('html').hasClass('salvattore')) {
@@ -53,4 +59,3 @@ var SuperFood;
         HomeDashboardApp.HomeDashboardCtrl = HomeDashboardCtrl;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=HomeDashboardCtrl.js.map
