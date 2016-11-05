@@ -35,6 +35,8 @@ namespace SuperFood.Shared.Data.Models
 
         public bool IsDeleted { get; set; }
 
+        public string Topings { get; set; }
+
         public virtual ProductType ProductType { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -3,10 +3,11 @@
     <div class="media">
         <div class="media-left">
             <i class="material-icons m-icon">local_dining</i>
-            {{product.Name}}
+            {{product.ProductType.Name}}
         </div>
         <div class="media-body">
-            <h2 class="card-title">{{product.ProductType.Name}}</h2>
+            <h2 class="card-title">{{product.Name}}</h2>
+            <h5>{{product.Description}}</h5>
         </div>
         <div class="media-right">
             <div class="media-right">
@@ -18,17 +19,27 @@
     </div>
 </div>
 <div class="panel-body">
-    <div class="switch">
-        <h3 class="section-title">{{product.Description}}</h3>
-    </div>
-    <uib-accordion>
-        <div uib-accordion-group class="panel-default" heading="Details">
-            <ul>
-                <li ng-repeat="detail in product.Details">{{detail}}</li>
-            </ul>
-        </div>
-    </uib-accordion>
+    <div></div>
     <div class="row">
+        <uib-accordion>
+            <div uib-accordion-group class="panel-default" heading="Details">
+                <ul>
+                    <li ng-repeat="detail in product.Details">{{detail}}</li>
+                </ul>
+            </div>
+        </uib-accordion>
+    </div>
+    <div class="row">
+        <uib-accordion>
+            <div uib-accordion-group class="panel-default" heading="Topings">
+                <div class="checkbox" ng-repeat="toping in product.Topings">
+                    <label><input type="checkbox" />{{toping}}</label>
+                </div>
+            </div>
+        </uib-accordion>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-lg-1">Quantity</div>
         <div class="col-sm-12 col-lg-3">
             <div class="form-inline">
                 <button class="btn btn-default btn-sm" ng-click="upSpinner(product)"><i class="material-icons settings">add</i></button>

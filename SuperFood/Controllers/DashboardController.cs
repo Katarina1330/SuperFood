@@ -37,6 +37,7 @@ namespace SuperFood.Controllers
                 InStock = m.InStock,
                 IsDeleted = m.IsDeleted,
                 Price = m.Price,
+                Topings = m.Topings?.Split(';'),
                 ProductType = new ProductTypeViewModel
                 {
                     Id = m.ProductTypeId,

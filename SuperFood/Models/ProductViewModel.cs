@@ -9,6 +9,7 @@
         public decimal Price { get; set; }
         public bool InStock { get; set; }
         public bool IsDeleted { get; set; }
+        public string[] Topings { get; set; }
         public ProductTypeViewModel ProductType { get; set; }
     }
 }
