@@ -5254,7 +5254,7 @@ button.list-group-item-danger {
   margin-bottom: 0; }
 
 .panel-group {
-  margin-bottom: 20px; }
+  margin-bottom: 0px; }
   .panel-group .panel {
     margin-bottom: 0;
     border-radius: 4px; }

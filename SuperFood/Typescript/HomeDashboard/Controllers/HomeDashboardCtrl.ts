@@ -43,7 +43,6 @@ module SuperFood.HomeDashboardApp {
                 if (!image || image == "") {
                     return false;
                 }
-
                 return true;
             }
         }

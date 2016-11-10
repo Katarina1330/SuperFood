@@ -18,3 +18,4 @@ var SuperFood;
         HomeDashboardApp.ProductDashboardContainer = ProductDashboardContainer;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=DashboardWidgetsDirectives.js.map

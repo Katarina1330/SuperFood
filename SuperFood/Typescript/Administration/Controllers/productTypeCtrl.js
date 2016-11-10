@@ -56,3 +56,4 @@ var SuperFood;
         AdministrationApp.ProductTypeCtrl = ProductTypeCtrl;
     })(AdministrationApp = SuperFood.AdministrationApp || (SuperFood.AdministrationApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=ProductTypeCtrl.js.map
