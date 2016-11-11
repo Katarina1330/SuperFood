@@ -7,6 +7,9 @@ module SuperFood.HomeDashboardApp.Interfaces {
         upSpinner: any;
         downSpinner: any;
         isImageEmpty: any;
+        addToCart: any;
+        removeFromCart: any;
+        shoppingCart: Array<SuperFood.HomeDashboardApp.Models.Product>;
         allProducts: Array<SuperFood.HomeDashboardApp.Models.Product>;
     }
 }

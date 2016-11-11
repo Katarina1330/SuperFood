@@ -127,4 +127,3 @@ var SuperFood;
         AdministrationApp.AdministrationSvc = AdministrationSvc;
     })(AdministrationApp = SuperFood.AdministrationApp || (SuperFood.AdministrationApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=AdministrationSvc.js.map

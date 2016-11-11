@@ -13,6 +13,8 @@ module SuperFood.HomeDashboardApp {
         private init() {
             var self = this;
 
+            self.$scope.shoppingCart = [];
+
             self.dataSvc.getProducts().then(function (result) {
                 self.$scope.allProducts = <Array<SuperFood.HomeDashboardApp.Models.Product>>result
             });
@@ -29,6 +31,8 @@ module SuperFood.HomeDashboardApp {
                         product.Amount += 1;
                     }
                 }
+
+                self.addToCart(product);
             }
 
             self.$scope.downSpinner = function (product) {
@@ -37,6 +41,8 @@ module SuperFood.HomeDashboardApp {
                 } else {
                     product.Amount -= 1;
                 }
+
+                self.removeFromCart(product);
             }
 
             self.$scope.isImageEmpty = function (image) {
@@ -56,6 +62,24 @@ module SuperFood.HomeDashboardApp {
             $('html').addClass('salvattore');
         }
 
+        private addToCart(product) {
+            var self = this;
+            self.$scope.shoppingCart.push(product);
+        }
+
+        private removeFromCart(product) {
+            var self = this;
+            var index = null;
+            for (var i = 0; i < self.$scope.shoppingCart.length; i++){
+                if (self.$scope.shoppingCart[i].Id == product.Id){
+                    index = i;
+                    break;
+                }   
+            }
+            if (index != null){ 
+                self.$scope.shoppingCart.splice(index, 1 );
+            }
+        }
 
         static $inject = ['$scope', '$window', 'homeDashboardSvc'];
 

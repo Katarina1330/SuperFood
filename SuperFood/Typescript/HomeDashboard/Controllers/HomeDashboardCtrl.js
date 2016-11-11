@@ -15,6 +15,7 @@ var SuperFood;
             }
             HomeDashboardCtrl.prototype.init = function () {
                 var self = this;
+                self.$scope.shoppingCart = [];
                 self.dataSvc.getProducts().then(function (result) {
                     self.$scope.allProducts = result;
                 });
@@ -30,6 +31,7 @@ var SuperFood;
                             product.Amount += 1;
                         }
                     }
+                    self.addToCart(product);
                 };
                 self.$scope.downSpinner = function (product) {
                     if (!product.Amount) {
@@ -38,6 +40,7 @@ var SuperFood;
                     else {
                         product.Amount -= 1;
                     }
+                    self.removeFromCart(product);
                 };
                 self.$scope.isImageEmpty = function (image) {
                     if (!image || image == "") {
@@ -53,10 +56,26 @@ var SuperFood;
                 this.$window.salvattore.init();
                 $('html').addClass('salvattore');
             };
+            HomeDashboardCtrl.prototype.addToCart = function (product) {
+                var self = this;
+                self.$scope.shoppingCart.push(product);
+            };
+            HomeDashboardCtrl.prototype.removeFromCart = function (product) {
+                var self = this;
+                var index = null;
+                for (var i = 0; i < self.$scope.shoppingCart.length; i++) {
+                    if (self.$scope.shoppingCart[i].Id == product.Id) {
+                        index = i;
+                        break;
+                    }
+                }
+                if (index != null) {
+                    self.$scope.shoppingCart.splice(index, 1);
+                }
+            };
             HomeDashboardCtrl.$inject = ['$scope', '$window', 'homeDashboardSvc'];
             return HomeDashboardCtrl;
         }());
         HomeDashboardApp.HomeDashboardCtrl = HomeDashboardCtrl;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=HomeDashboardCtrl.js.map
