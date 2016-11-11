@@ -1,0 +1,47 @@
+﻿<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="../../../Content/products.css" />
+</head>
+
+<div class="products container col-sm-12" style="width: 98% !important;">
+
+    <div class="row">
+        <div class="col-md-12 col-md-12">
+            <h1 class="strat-detail-header">Cart review</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-view-container">
+
+                <table class="table-view">
+                    <thead class="table-view-header">
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table-view-body">
+                        <tr class="products" ng-repeat="product in shoppingCart" ng-class="{lightgrey: $index % 2 != 0}">
+                            <td>
+                                {{product.Name}}
+                            </td>
+                            <td>
+                                {{product.Price}}
+                            </td>
+                            <td>
+                                remove
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>

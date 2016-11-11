@@ -8,6 +8,7 @@ var SuperFood;
             function Config($routeProvider) {
                 $routeProvider
                     .when("/home/dashboard", { templateUrl: "../Typescript/HomeDashboard/Templates/HomeDashboard.html", controller: "homeDashboardCtrl" })
+                    .when("/home/cartreview", { templateUrl: "../Typescript/HomeDashboard/Templates/CartReview.html", controller: "homeDashboardCtrl" })
                     .otherwise({ redirectTo: '/home/dashboard' });
             }
             return Config;
@@ -22,3 +23,4 @@ var SuperFood;
             .directive('afterRenderDashboard', SuperFood.HomeDashboardApp.AfterRenderDashboard.factory());
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=homedashboardapp.js.map

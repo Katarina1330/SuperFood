@@ -1078,6 +1078,7 @@
     <Content Include="Typescript\Administration\Templates\OrderDashboard.html" />
     <Content Include="Typescript\Administration\Templates\ProductDashboard.html" />
     <Content Include="Typescript\Administration\Templates\ProductTypeDashboard.html" />
+    <Content Include="Typescript\HomeDashboard\Templates\CartReview.html" />
     <Content Include="Typescript\HomeDashboard\Templates\HomeDashboard.html" />
     <Content Include="Typescript\HomeDashboard\Templates\ProductWidget.html" />
     <Content Include="Web.config">

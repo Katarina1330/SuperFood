@@ -17,10 +17,10 @@
 <div class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
         <p class="navbar-text pull-left">
-           You have <!--<input class="text-center" ng-model="" style="width: 60px" type="text" readonly placeholder="0"/>--> {{ shoppingCart.length }} products selected. 
+           You have <b>{{ shoppingCart.length }}</b> selected items. 
         </p>
 
-        <a href="http://youtu.be/zJahlKPCL9g" class="navbar-btn btn-danger btn pull-right">
+        <a href="#home/cartreview" class="navbar-btn btn-danger btn pull-right" ng-hide="shoppingCart.length == 0">
             <i class="material-icons m-icon">shopping_cart</i> Place your order
         </a>
     </div>

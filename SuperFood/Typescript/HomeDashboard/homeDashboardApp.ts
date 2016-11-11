@@ -7,6 +7,7 @@ module SuperFood.HomeDashboardApp {
         constructor($routeProvider: ng.route.IRouteProvider ) {
             $routeProvider
                 .when("/home/dashboard", { templateUrl: "../Typescript/HomeDashboard/Templates/HomeDashboard.html", controller: "homeDashboardCtrl" })
+                .when("/home/cartreview", { templateUrl: "../Typescript/HomeDashboard/Templates/CartReview.html", controller: "homeDashboardCtrl" })
 
                 //default route
                 .otherwise({ redirectTo: '/home/dashboard' });
