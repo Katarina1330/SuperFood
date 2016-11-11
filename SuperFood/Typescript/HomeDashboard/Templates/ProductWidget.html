@@ -1,59 +1,62 @@
 ﻿
-<div class="panel-heading card-header">
-    <div class="media">
-        <div class="media-left">
-            <i class="material-icons m-icon" ng-hide="isImageEmpty(product.Image)">local_dining</i>
-            <img class="product-img" ng-show="isImageEmpty(product.Image)" src="../../../Images/{{product.Image}}" />
-            {{product.ProductType.Name}}
-        </div>
-        <div class="media-body">
-            <h2 class="card-title">{{product.Name}}</h2>
-            <h5>{{product.Description}}</h5>
-        </div>
-        <div class="media-right">
+<!--<div class="col-lg-6">-->
+    <div class="panel-heading card-header">
+        <div class="media">
+            <div class="media-left">
+                <i class="material-icons m-icon" ng-hide="isImageEmpty(product.Image)">local_dining</i>
+                <img class="product-img" ng-show="isImageEmpty(product.Image)" src="../../../Images/{{product.Image}}" />
+                {{product.ProductType.Name}}
+            </div>
+            <div class="media-body">
+                <h2 class="card-title">{{product.Name}}</h2>
+                <h5>{{product.Description}}</h5>
+            </div>
             <div class="media-right">
-                <span style="cursor: pointer;">
-                    <i class="material-icons settings">favorite</i>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="panel-body">
-    <div class="row">
-        <uib-accordion>
-            <div uib-accordion-group class="panel-default" is-open="detailsOpen">
-                <uib-accordion-heading>
-                    Details <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': detailsOpen, 'glyphicon-chevron-right': !detailsOpen}"></i>
-                </uib-accordion-heading>
-                <ul>
-                    <li ng-repeat="detail in product.Details">{{detail}}</li>
-                </ul>
-            </div>
-        </uib-accordion>
-   
-        <uib-accordion>
-            <div uib-accordion-group class="panel-default" is-open="topingsOpen">
-                <uib-accordion-heading>
-                    Topings <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': topingsOpen, 'glyphicon-chevron-right': !topingsOpen}"></i>
-                </uib-accordion-heading>
-                <div class="checkbox" ng-repeat="toping in product.Topings">
-                    <label><input type="checkbox" />{{toping}}</label>
+                <div class="media-right">
+                    <span style="cursor: pointer;">
+                        <i class="material-icons settings">favorite</i>
+                    </span>
                 </div>
             </div>
-        </uib-accordion>
-    </div>
-    <div class="row">
-        <div class="col-sm-12 col-lg-1" style="padding-top:20px;padding-bottom:5px">
-            <h4 class="panel-title">Quantity</h4>
         </div>
-        <div class="col-sm-12 col-lg-3" style="padding-top:20px">
-            <div class="form-inline">
-                <button class="btn btn-default btn-sm" ng-click="upSpinner(product)"><i class="material-icons settings">add</i></button>
-                <!--<span class="label label-default" ng-bind="product.Amount">0</span>-->
-                <input type="text" class="form-control input-sm text-center" style="width: 60px" ng-model="product.Amount" placeholder="0" readonly />
-                <button class="btn btn-default btn-sm" ng-click="downSpinner(product)"><i class="material-icons settings">remove</i></button>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <uib-accordion>
+                <div uib-accordion-group class="panel-default" is-open="detailsOpen">
+                    <uib-accordion-heading>
+                        Details <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': detailsOpen, 'glyphicon-chevron-right': !detailsOpen}"></i>
+                    </uib-accordion-heading>
+                    <ul>
+                        <li ng-repeat="detail in product.Details">{{detail}}</li>
+                    </ul>
+                </div>
+            </uib-accordion>
+
+            <uib-accordion>
+                <div uib-accordion-group class="panel-default" is-open="topingsOpen">
+                    <uib-accordion-heading>
+                        Topings <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': topingsOpen, 'glyphicon-chevron-right': !topingsOpen}"></i>
+                    </uib-accordion-heading>
+                    <div class="checkbox" ng-repeat="toping in product.Topings">
+                        <label><input type="checkbox" />{{toping}}</label>
+                    </div>
+                </div>
+            </uib-accordion>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-1" style="padding-top:20px;padding-bottom:5px">
+                <h4 class="panel-title">Quantity</h4>
+            </div>
+            <div class="col-sm-12 col-lg-3" style="padding-top:20px">
+                <div class="form-inline">
+                    <button class="btn btn-default btn-sm" ng-click="upSpinner(product)"><i class="material-icons settings">add</i></button>
+                    <!--<span class="label label-default" ng-bind="product.Amount">0</span>-->
+                    <input type="text" class="form-control input-sm text-center" style="width: 60px" ng-model="product.Amount" placeholder="0" readonly />
+                    <button class="btn btn-default btn-sm" ng-click="downSpinner(product)"><i class="material-icons settings">remove</i></button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+<!--</div>-->
