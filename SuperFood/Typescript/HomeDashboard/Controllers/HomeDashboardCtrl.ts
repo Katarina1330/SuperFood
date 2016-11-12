@@ -14,6 +14,7 @@ module SuperFood.HomeDashboardApp {
             var self = this;
 
             self.$scope.shoppingCart = [];
+            self.$scope.totalPrice = 0;
 
             self.dataSvc.getProducts().then(function (result) {
                 self.$scope.allProducts = <Array<SuperFood.HomeDashboardApp.Models.Product>>result
@@ -65,6 +66,7 @@ module SuperFood.HomeDashboardApp {
         private addToCart(product) {
             var self = this;
             self.$scope.shoppingCart.push(product);
+            self.$scope.totalPrice += product.Price;
         }
 
         private removeFromCart(product) {
@@ -77,7 +79,8 @@ module SuperFood.HomeDashboardApp {
                 }   
             }
             if (index != null){ 
-                self.$scope.shoppingCart.splice(index, 1 );
+                self.$scope.shoppingCart.splice(index, 1);
+                self.$scope.totalPrice -= product.Price;
             }
         }
 

@@ -16,6 +16,7 @@ var SuperFood;
             HomeDashboardCtrl.prototype.init = function () {
                 var self = this;
                 self.$scope.shoppingCart = [];
+                self.$scope.totalPrice = 0;
                 self.dataSvc.getProducts().then(function (result) {
                     self.$scope.allProducts = result;
                 });
@@ -59,6 +60,7 @@ var SuperFood;
             HomeDashboardCtrl.prototype.addToCart = function (product) {
                 var self = this;
                 self.$scope.shoppingCart.push(product);
+                self.$scope.totalPrice += product.Price;
             };
             HomeDashboardCtrl.prototype.removeFromCart = function (product) {
                 var self = this;
@@ -71,6 +73,7 @@ var SuperFood;
                 }
                 if (index != null) {
                     self.$scope.shoppingCart.splice(index, 1);
+                    self.$scope.totalPrice -= product.Price;
                 }
             };
             HomeDashboardCtrl.$inject = ['$scope', '$window', 'homeDashboardSvc'];
@@ -79,4 +82,3 @@ var SuperFood;
         HomeDashboardApp.HomeDashboardCtrl = HomeDashboardCtrl;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=HomeDashboardCtrl.js.map
