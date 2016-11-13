@@ -18,22 +18,22 @@
                 <table class="table-view">
                     <thead class="table-view-header">
                         <tr>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Remove</th>
+                            <th class="col-sm-2 col-lg-2">Name</th>
+                            <th class="col-sm-2 col-lg-2">Price</th>
+                            <th class="col-sm-2 col-lg-2">Remove</th>
                         </tr>
                     </thead>
 
                     <tbody class="table-view-body">
                         <tr class="products" ng-repeat="product in shoppingCart track by $index" ng-class="{lightgrey: $index % 2 != 0}">
-                            <td>
+                            <td class="col-sm-2 col-lg-2">
                                 {{product.Name}}
                             </td>
-                            <td>
-                                {{product.Price}}
+                            <td class="col-sm-2 col-lg-2">
+                                {{product.Price | currency}}
                             </td>
-                            <td>
-                                remove
+                            <td class="col-sm-3 col-lg-3">
+                                <a ng-click="removeFromCart(product)"><i class="material-icons m-icon">delete</i></a>
                             </td>
                         </tr>
                     </tbody>

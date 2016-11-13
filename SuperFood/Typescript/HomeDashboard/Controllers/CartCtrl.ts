@@ -15,8 +15,26 @@ module SuperFood.HomeDashboardApp {
             self.$scope.shoppingCart = self.dataSvc.getShoppingCart();
             self.$scope.totalPrice = self.dataSvc.getTotalPrice();
 
+            self.$scope.removeFromCart = function (product) {
+                self.removeFromCart(product);
+            }
+
         }
 
+        private removeFromCart(product) {
+            var self = this;
+            var index = null;
+            for (var i = 0; i < self.$scope.shoppingCart.length; i++) {
+                if (self.$scope.shoppingCart[i].Id == product.Id) {
+                    index = i;
+                    break;
+                }
+            }
+            if (index != null) {
+                self.$scope.shoppingCart.splice(index, 1);
+                self.$scope.totalPrice -= product.Price;
+            }
+        }
 
 
         static $inject = ['$scope', 'homeDashboardSvc'];
