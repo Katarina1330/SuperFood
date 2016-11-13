@@ -45,3 +45,15 @@
     </div>
 
 </div>
+
+<div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <p class="navbar-text pull-left">
+            You have <b>{{ shoppingCart.length }}</b> selected items.   TOTAL:<b> {{totalPrice | currency}}</b>
+        </p>
+
+        <a href="#home/cartreview" class="navbar-btn btn-danger btn pull-right" ng-hide="shoppingCart.length == 0">
+            <i class="material-icons m-icon">shopping_cart</i> Submit order
+        </a>
+    </div>
+</div>
