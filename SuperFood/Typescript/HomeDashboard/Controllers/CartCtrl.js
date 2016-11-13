@@ -19,6 +19,9 @@ var SuperFood;
                 self.$scope.removeFromCart = function (product) {
                     self.removeFromCart(product);
                 };
+                self.$scope.submitOrder = function (shoppingCart) {
+                    self.dataSvc.submitOrder(shoppingCart);
+                };
             };
             CartCtrl.prototype.removeFromCart = function (product) {
                 var self = this;
@@ -40,3 +43,4 @@ var SuperFood;
         HomeDashboardApp.CartCtrl = CartCtrl;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=CartCtrl.js.map

@@ -9,6 +9,7 @@ var SuperFood;
                 this.httpService = $http;
                 this.qService = $q;
                 this.getProductApiPath = "Dashboard/GetAllProducts";
+                this.postShoppingCartApiPath = "Cart/SubmitOrder";
             }
             HomeDashboardSvc.prototype.getProducts = function () {
                 var self = this;
@@ -34,6 +35,16 @@ var SuperFood;
                 var self = this;
                 return self.totalPrice;
             };
+            HomeDashboardSvc.prototype.submitOrder = function (shoppingCart) {
+                var self = this;
+                var deferred = self.qService.defer();
+                self.httpService.post(self.postShoppingCartApiPath, shoppingCart).then(function (result) {
+                    deferred.resolve(result);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+                return deferred.promise;
+            };
             HomeDashboardSvc.factory = function ($http, $q) {
                 return new HomeDashboardSvc($http, $q);
             };
@@ -42,3 +53,4 @@ var SuperFood;
         HomeDashboardApp.HomeDashboardSvc = HomeDashboardSvc;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=HomeDashboardSvc.js.map

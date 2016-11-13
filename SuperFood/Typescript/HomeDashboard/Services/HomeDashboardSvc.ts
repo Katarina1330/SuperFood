@@ -8,6 +8,7 @@ module SuperFood.HomeDashboardApp {
         private httpService: ng.IHttpService;
         private qService: ng.IQService;
         private getProductApiPath: string;
+        private postShoppingCartApiPath: string;
         private shoppingCart: Array<SuperFood.HomeDashboardApp.Models.Product>;
         private totalPrice: number;
 
@@ -15,6 +16,7 @@ module SuperFood.HomeDashboardApp {
             this.httpService = $http;
             this.qService = $q;
             this.getProductApiPath = "Dashboard/GetAllProducts";
+            this.postShoppingCartApiPath = "Cart/SubmitOrder";
         }
 
         public getProducts(): ng.IPromise<any> {
@@ -46,6 +48,21 @@ module SuperFood.HomeDashboardApp {
         public getTotalPrice() {
             var self = this;
             return self.totalPrice;
+        }
+
+        public submitOrder(shoppingCart): ng.IPromise<any> {
+            var self = this;
+
+            var deferred = self.qService.defer();
+
+            self.httpService.post(self.postShoppingCartApiPath, shoppingCart).then(function (result) {
+
+                deferred.resolve(result);
+            }, function (error) {
+                deferred.reject(error);
+            });
+
+            return deferred.promise;
         }
 
 

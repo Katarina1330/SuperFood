@@ -19,6 +19,9 @@ module SuperFood.HomeDashboardApp {
                 self.removeFromCart(product);
             }
 
+            self.$scope.submitOrder = function (shoppingCart) {
+                self.dataSvc.submitOrder(shoppingCart);
+            }
         }
 
         private removeFromCart(product) {

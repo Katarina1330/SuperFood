@@ -77,7 +77,7 @@
                 <div class="form-group">
                     <label> TOTAL:<b> {{totalPrice | currency}}</b></label>
                 </div>
-                <button type="button" ng-disabled="cart.$invalid" class="btn btn-danger"><i class="material-icons m-icon">shopping_cart</i> Submit order</button>
+                <button type="button" ng-disabled="cart.$invalid" ng-click="submitOrder(shoppingCart)" class="btn btn-danger"><i class="material-icons m-icon">shopping_cart</i> Submit order</button>
             </form>
         </div>
     </div>
