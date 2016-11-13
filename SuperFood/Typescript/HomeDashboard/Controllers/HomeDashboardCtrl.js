@@ -61,6 +61,7 @@ var SuperFood;
                 var self = this;
                 self.$scope.shoppingCart.push(product);
                 self.$scope.totalPrice += product.Price;
+                self.dataSvc.setShoppingCart(self.$scope.shoppingCart, self.$scope.totalPrice);
             };
             HomeDashboardCtrl.prototype.removeFromCart = function (product) {
                 var self = this;
@@ -82,3 +83,4 @@ var SuperFood;
         HomeDashboardApp.HomeDashboardCtrl = HomeDashboardCtrl;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=HomeDashboardCtrl.js.map

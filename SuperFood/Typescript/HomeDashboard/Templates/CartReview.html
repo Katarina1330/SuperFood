@@ -25,7 +25,7 @@
                     </thead>
 
                     <tbody class="table-view-body">
-                        <tr class="products" ng-repeat="product in shoppingCart" ng-class="{lightgrey: $index % 2 != 0}">
+                        <tr class="products" ng-repeat="product in shoppingCart track by $index" ng-class="{lightgrey: $index % 2 != 0}">
                             <td>
                                 {{product.Name}}
                             </td>

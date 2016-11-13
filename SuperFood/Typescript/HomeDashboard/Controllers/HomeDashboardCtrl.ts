@@ -67,6 +67,7 @@ module SuperFood.HomeDashboardApp {
             var self = this;
             self.$scope.shoppingCart.push(product);
             self.$scope.totalPrice += product.Price;
+            self.dataSvc.setShoppingCart(self.$scope.shoppingCart, self.$scope.totalPrice);
         }
 
         private removeFromCart(product) {

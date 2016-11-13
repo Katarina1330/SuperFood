@@ -7,7 +7,7 @@ module SuperFood.HomeDashboardApp {
         constructor($routeProvider: ng.route.IRouteProvider ) {
             $routeProvider
                 .when("/home/dashboard", { templateUrl: "../Typescript/HomeDashboard/Templates/HomeDashboard.html", controller: "homeDashboardCtrl" })
-                .when("/home/cartreview", { templateUrl: "../Typescript/HomeDashboard/Templates/CartReview.html", controller: "homeDashboardCtrl" })
+                .when("/home/cartreview", { templateUrl: "../Typescript/HomeDashboard/Templates/CartReview.html", controller: "cartCtrl" })
 
                 //default route
                 .otherwise({ redirectTo: '/home/dashboard' });
@@ -20,6 +20,7 @@ module SuperFood.HomeDashboardApp {
         .config(Config)
         .factory('homeDashboardSvc', ['$http', '$q', SuperFood.HomeDashboardApp.HomeDashboardSvc.factory])
         .controller('homeDashboardCtrl', SuperFood.HomeDashboardApp.HomeDashboardCtrl)
+        .controller('cartCtrl', SuperFood.HomeDashboardApp.CartCtrl)
         .directive('productDashboardContainer', SuperFood.HomeDashboardApp.ProductDashboardContainer.factory())
         .directive('afterRenderDashboard', SuperFood.HomeDashboardApp.AfterRenderDashboard.factory());
 }

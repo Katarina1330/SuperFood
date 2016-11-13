@@ -8,6 +8,8 @@ module SuperFood.HomeDashboardApp {
         private httpService: ng.IHttpService;
         private qService: ng.IQService;
         private getProductApiPath: string;
+        private shoppingCart: Array<SuperFood.HomeDashboardApp.Models.Product>;
+        private totalPrice: number;
 
         constructor($http: ng.IHttpService, $q: ng.IQService) {
             this.httpService = $http;
@@ -27,6 +29,23 @@ module SuperFood.HomeDashboardApp {
             });
 
             return deferred.promise;
+        }
+
+        public setShoppingCart(shoppingCart, totalPrice) {
+            var self = this;
+            self.shoppingCart = shoppingCart;
+            self.totalPrice = totalPrice;
+        }
+
+        public getShoppingCart() {
+            var self = this;
+            debugger;
+            return self.shoppingCart;
+        }
+
+        public getTotalPrice() {
+            var self = this;
+            return self.totalPrice;
         }
 
 

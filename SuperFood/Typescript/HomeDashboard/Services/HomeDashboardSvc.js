@@ -20,6 +20,20 @@ var SuperFood;
                 });
                 return deferred.promise;
             };
+            HomeDashboardSvc.prototype.setShoppingCart = function (shoppingCart, totalPrice) {
+                var self = this;
+                self.shoppingCart = shoppingCart;
+                self.totalPrice = totalPrice;
+            };
+            HomeDashboardSvc.prototype.getShoppingCart = function () {
+                var self = this;
+                debugger;
+                return self.shoppingCart;
+            };
+            HomeDashboardSvc.prototype.getTotalPrice = function () {
+                var self = this;
+                return self.totalPrice;
+            };
             HomeDashboardSvc.factory = function ($http, $q) {
                 return new HomeDashboardSvc($http, $q);
             };
@@ -28,3 +42,4 @@ var SuperFood;
         HomeDashboardApp.HomeDashboardSvc = HomeDashboardSvc;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=HomeDashboardSvc.js.map
