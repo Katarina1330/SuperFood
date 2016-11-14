@@ -6,9 +6,10 @@ var SuperFood;
     var HomeDashboardApp;
     (function (HomeDashboardApp) {
         var CartCtrl = (function () {
-            function CartCtrl($scope, homeDashboardSvc) {
+            function CartCtrl($scope, $window, homeDashboardSvc) {
                 var self = this;
                 self.$scope = $scope;
+                self.$window = $window;
                 self.dataSvc = homeDashboardSvc;
                 self.init();
             }
@@ -21,6 +22,7 @@ var SuperFood;
                 };
                 self.$scope.submitOrder = function (shoppingCart) {
                     self.dataSvc.submitOrder(shoppingCart);
+                    self.$window.location.replace('#home/dashboard');
                 };
             };
             CartCtrl.prototype.removeFromCart = function (product) {
@@ -37,10 +39,9 @@ var SuperFood;
                     self.$scope.totalPrice -= product.Price;
                 }
             };
-            CartCtrl.$inject = ['$scope', 'homeDashboardSvc'];
+            CartCtrl.$inject = ['$scope', '$window', 'homeDashboardSvc'];
             return CartCtrl;
         }());
         HomeDashboardApp.CartCtrl = CartCtrl;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=CartCtrl.js.map

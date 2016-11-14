@@ -7,7 +7,8 @@ module SuperFood.HomeDashboardApp {
     export class CartCtrl {
 
         private $scope: SuperFood.HomeDashboardApp.Interfaces.IHomeDashboardScope;
-        private dataSvc: SuperFood.HomeDashboardApp.HomeDashboardSvc;   
+        private dataSvc: SuperFood.HomeDashboardApp.HomeDashboardSvc; 
+        private $window: any; 
 
         private init() {
             
@@ -21,6 +22,8 @@ module SuperFood.HomeDashboardApp {
 
             self.$scope.submitOrder = function (shoppingCart) {
                 self.dataSvc.submitOrder(shoppingCart);
+                self.$window.location.replace('#home/dashboard');
+
             }
         }
 
@@ -40,11 +43,12 @@ module SuperFood.HomeDashboardApp {
         }
 
 
-        static $inject = ['$scope', 'homeDashboardSvc'];
+        static $inject = ['$scope', '$window', 'homeDashboardSvc'];
 
-        constructor($scope: SuperFood.HomeDashboardApp.Interfaces.IHomeDashboardScope, homeDashboardSvc: SuperFood.HomeDashboardApp.HomeDashboardSvc) {
+        constructor($scope: SuperFood.HomeDashboardApp.Interfaces.IHomeDashboardScope, $window: any, homeDashboardSvc: SuperFood.HomeDashboardApp.HomeDashboardSvc) {
             var self = this;
             self.$scope = $scope;
+            self.$window = $window;
             self.dataSvc = homeDashboardSvc;
             self.init();
         }
