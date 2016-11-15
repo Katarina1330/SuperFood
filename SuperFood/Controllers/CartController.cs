@@ -21,27 +21,24 @@ namespace SuperFood.Controllers
         [HttpPost]
         public ActionResult SubmitOrder(List<ProductViewModel> shoppingCart)
         {
-            var products = shoppingCart.Select(p => new Product
-            {
-                Id = p.Id,
-                Name = p.Name,
-                Price = p.Price,
-                Details = string.Join(";", p.Details),
-                Description = p.Description,
-                InStock = p.InStock,
-                ProductTypeId = p.ProductType.Id,
-                IsDeleted = p.IsDeleted,
-                Topings = string.Join(";", p.Topings),
-                Image = p.Image
-            });
-
             var order = new Order();
-            order.Price = products.Sum(p => p.Price);
+            order.Price = shoppingCart.Sum(p => p.Price);
             order.Date = DateTime.Now;
             order.IsNotified = false;
-            order.Products = products.ToList();
 
             _repository.Create(order);
+
+            var groupedProduct = shoppingCart.GroupBy(p => p.Id);
+            foreach (var grouped in groupedProduct)
+            {
+                var orderProduct = new OrderProduct();
+                orderProduct.OrderId = order.Id;
+                orderProduct.ProductId = grouped.First().Id;
+                orderProduct.Toppings = string.Join(";", grouped.First().Topings);
+                orderProduct.Amount = grouped.Count();
+                _repository.Create(orderProduct);
+            }
+
             return View();
         }
     }

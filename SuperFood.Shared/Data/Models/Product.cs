@@ -13,7 +13,7 @@ namespace SuperFood.Shared.Data.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
-            Orders = new HashSet<Order>();
+            OrderProducts = new HashSet<OrderProduct>();
             Categories = new HashSet<Category>();
         }
 
@@ -35,16 +35,19 @@ namespace SuperFood.Shared.Data.Models
 
         public bool IsDeleted { get; set; }
 
+        [StringLength(255)]
         public string Topings { get; set; }
 
+        [StringLength(50)]
         public string Image { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderProduct> OrderProducts { get; set; }
 
         public virtual ProductType ProductType { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Category> Categories { get; set; }
+
     }
 }

@@ -17,7 +17,8 @@ namespace SuperFood.Shared.Data.Models
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
-
+        public virtual DbSet<OrderProduct> OrderProducts { get; set; }
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>()
@@ -30,13 +31,18 @@ namespace SuperFood.Shared.Data.Models
                 .HasPrecision(18, 0);
 
             modelBuilder.Entity<Order>()
-                .HasMany(e => e.Products)
-                .WithMany(e => e.Orders)
-                .Map(m => m.ToTable("OrderProduct").MapLeftKey("OrderId").MapRightKey("ProductId"));
+                .HasMany(e => e.OrderProducts)
+                .WithRequired(e => e.Order)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Product>()
                 .Property(e => e.Price)
                 .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Product>()
+                .HasMany(e => e.OrderProducts)
+                .WithRequired(e => e.Product)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<ProductType>()
                 .HasMany(e => e.Products)
