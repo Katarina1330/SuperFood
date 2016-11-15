@@ -10,6 +10,7 @@
         public bool InStock { get; set; }
         public bool IsDeleted { get; set; }
         public string[] Topings { get; set; }
+        public string[] SelectedTopings { get; set; }
         public string Image { get; set; }
         public ProductTypeViewModel ProductType { get; set; }
     }

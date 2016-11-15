@@ -49,6 +49,20 @@ var SuperFood;
                     }
                     return true;
                 };
+                self.$scope.addSelectedToping = function (product, toping, state) {
+                    if (product.SelectedTopings == undefined) {
+                        product.SelectedTopings = [];
+                    }
+                    if (state) {
+                        product.SelectedTopings.push(toping);
+                    }
+                    else {
+                        var index = product.SelectedTopings.indexOf(toping);
+                        if (index >= 0) {
+                            product.SelectedTopings.splice(index, 1);
+                        }
+                    }
+                };
             };
             HomeDashboardCtrl.prototype.initUIComponents = function () {
                 if ($('html').hasClass('salvattore')) {
@@ -83,4 +97,3 @@ var SuperFood;
         HomeDashboardApp.HomeDashboardCtrl = HomeDashboardCtrl;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=HomeDashboardCtrl.js.map

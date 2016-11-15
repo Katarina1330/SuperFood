@@ -52,6 +52,20 @@ module SuperFood.HomeDashboardApp {
                 }
                 return true;
             }
+
+            self.$scope.addSelectedToping = function (product, toping, state) {
+                if (product.SelectedTopings == undefined) {
+                    product.SelectedTopings = [];
+                }
+                if (state) {
+                    product.SelectedTopings.push(toping)
+                } else {
+                    var index = product.SelectedTopings.indexOf(toping);
+                    if (index >= 0) {
+                        product.SelectedTopings.splice(index, 1);
+                    }
+                }
+            }
         }
 
         private initUIComponents() {
@@ -73,13 +87,13 @@ module SuperFood.HomeDashboardApp {
         private removeFromCart(product) {
             var self = this;
             var index = null;
-            for (var i = 0; i < self.$scope.shoppingCart.length; i++){
-                if (self.$scope.shoppingCart[i].Id == product.Id){
+            for (var i = 0; i < self.$scope.shoppingCart.length; i++) {
+                if (self.$scope.shoppingCart[i].Id == product.Id) {
                     index = i;
                     break;
-                }   
+                }
             }
-            if (index != null){ 
+            if (index != null) {
                 self.$scope.shoppingCart.splice(index, 1);
                 self.$scope.totalPrice -= product.Price;
             }

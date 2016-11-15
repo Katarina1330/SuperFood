@@ -10,6 +10,8 @@ module SuperFood.HomeDashboardApp.Interfaces {
         addToCart: any;
         removeFromCart: any;
         submitOrder: any;
+        closeShoppingCart: any;
+        addSelectedToping: any;
         totalPrice: number;
         shoppingCart: Array<SuperFood.HomeDashboardApp.Models.Product>;
         allProducts: Array<SuperFood.HomeDashboardApp.Models.Product>;

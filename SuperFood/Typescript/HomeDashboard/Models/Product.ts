@@ -14,5 +14,7 @@ module SuperFood.HomeDashboardApp.Models {
         IsDeleted: boolean;
         Amount: number;
         Image: string;
+        Topings: Array<string>;
+        SelectedTopings: Array<string>;
     }
 }
