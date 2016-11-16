@@ -23,12 +23,29 @@ namespace SuperFood.Controllers
         // GET: Dashboard
         public string GetByCategory(string value)
         {
-            var allProducts = _repository.Read<Category>()
+            var categoryProducts = _repository.Read<Category>()
+                .Where(p => p.Identifier.ToLower() == value.ToLower())
+                .Single()
+                .Products;
+                
+            IEnumerable<ProductViewModel> allProductsViewModel = ConvertToEntity(categoryProducts);
+            return JsonConvert.SerializeObject(allProductsViewModel);
+        }
+
+        public string GetByType(string value)
+        {
+            var typeProduct = _repository.Read<ProductType>()
                 .Where(p => p.Identifier.ToLower() == value.ToLower())
                 .Single()
                 .Products;
 
-            var allProductsViewModel = allProducts.Select(m => new ProductViewModel
+            IEnumerable<ProductViewModel> allProductsViewModel = ConvertToEntity(typeProduct);
+            return JsonConvert.SerializeObject(allProductsViewModel);
+        }
+
+        private static IEnumerable<ProductViewModel> ConvertToEntity(ICollection<Product> allProducts)
+        {
+            return allProducts.Select(m => new ProductViewModel
             {
                 Id = m.Id,
                 Name = m.Name,
@@ -45,12 +62,6 @@ namespace SuperFood.Controllers
                     Name = m.ProductType.Name
                 }
             });
-            return JsonConvert.SerializeObject(allProductsViewModel);
-        }
-
-        public void GetByType(string value)
-        {
-
         }
     }
 }
