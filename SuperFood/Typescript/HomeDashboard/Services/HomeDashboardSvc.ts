@@ -15,16 +15,17 @@ module SuperFood.HomeDashboardApp {
         constructor($http: ng.IHttpService, $q: ng.IQService) {
             this.httpService = $http;
             this.qService = $q;
-            this.getProductApiPath = "ProductDashboard/GetByCategory";
+            this.getProductApiPath = "ProductDashboard/";
             this.postShoppingCartApiPath = "Cart/SubmitOrder";
         }
 
-        public getProducts(): ng.IPromise<any> {
+        public getProducts(actionName, value): ng.IPromise<any> {
             var self = this;
 
             var deferred = self.qService.defer();
+            var apiPath = self.getProductApiPath + actionName + '?value=' + value;
 
-            self.httpService.get(self.getProductApiPath).then(function (result) {
+            self.httpService.get(apiPath).then(function (result) {
                 deferred.resolve(result.data);
             }, function (error) {
                 deferred.reject(error);

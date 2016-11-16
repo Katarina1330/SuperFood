@@ -9,14 +9,24 @@ module SuperFood.HomeDashboardApp {
         private $scope: SuperFood.HomeDashboardApp.Interfaces.IHomeDashboardScope;
         private dataSvc: SuperFood.HomeDashboardApp.HomeDashboardSvc;
         private $window: any;
+        private $routeParams: any;
+        private defaulutActionName = 'getbycategory';
+        private defaultValue = 'topdeals';
 
         private init() {
             var self = this;
+            var actionName = self.$routeParams.key;
+            var value = self.$routeParams.value;
+
+            if (actionName == undefined || value == undefined){
+                actionName = self.defaulutActionName;
+                value = self.defaultValue;
+            }
 
             self.$scope.shoppingCart = [];
             self.$scope.totalPrice = 0;
 
-            self.dataSvc.getProducts().then(function (result) {
+            self.dataSvc.getProducts(actionName, value).then(function (result) {
                 self.$scope.allProducts = <Array<SuperFood.HomeDashboardApp.Models.Product>>result
             });
 
@@ -99,12 +109,13 @@ module SuperFood.HomeDashboardApp {
             }
         }
 
-        static $inject = ['$scope', '$window', 'homeDashboardSvc'];
+        static $inject = ['$scope', '$window', '$routeParams', 'homeDashboardSvc'];
 
-        constructor($scope: SuperFood.HomeDashboardApp.Interfaces.IHomeDashboardScope, $window: any, homeDashboardSvc: SuperFood.HomeDashboardApp.HomeDashboardSvc) {
+        constructor($scope: SuperFood.HomeDashboardApp.Interfaces.IHomeDashboardScope, $window: any, $routeParams: any, homeDashboardSvc: SuperFood.HomeDashboardApp.HomeDashboardSvc) {
             var self = this;
             self.$scope = $scope;
             self.$window = $window;
+            self.$routeParams = $routeParams;
             self.dataSvc = homeDashboardSvc;
             self.init();
         }

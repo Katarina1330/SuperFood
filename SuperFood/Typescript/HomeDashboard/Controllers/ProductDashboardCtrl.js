@@ -6,18 +6,27 @@ var SuperFood;
     var HomeDashboardApp;
     (function (HomeDashboardApp) {
         var ProductDashboardCtrl = (function () {
-            function ProductDashboardCtrl($scope, $window, homeDashboardSvc) {
+            function ProductDashboardCtrl($scope, $window, $routeParams, homeDashboardSvc) {
+                this.defaulutActionName = 'getbycategory';
+                this.defaultValue = 'topdeals';
                 var self = this;
                 self.$scope = $scope;
                 self.$window = $window;
+                self.$routeParams = $routeParams;
                 self.dataSvc = homeDashboardSvc;
                 self.init();
             }
             ProductDashboardCtrl.prototype.init = function () {
                 var self = this;
+                var actionName = self.$routeParams.key;
+                var value = self.$routeParams.value;
+                if (actionName == undefined || value == undefined) {
+                    actionName = self.defaulutActionName;
+                    value = self.defaultValue;
+                }
                 self.$scope.shoppingCart = [];
                 self.$scope.totalPrice = 0;
-                self.dataSvc.getProducts().then(function (result) {
+                self.dataSvc.getProducts(actionName, value).then(function (result) {
                     self.$scope.allProducts = result;
                 });
                 self.$scope.postDashboardRender = function () {
@@ -91,7 +100,7 @@ var SuperFood;
                     self.$scope.totalPrice -= product.Price;
                 }
             };
-            ProductDashboardCtrl.$inject = ['$scope', '$window', 'homeDashboardSvc'];
+            ProductDashboardCtrl.$inject = ['$scope', '$window', '$routeParams', 'homeDashboardSvc'];
             return ProductDashboardCtrl;
         }());
         HomeDashboardApp.ProductDashboardCtrl = ProductDashboardCtrl;

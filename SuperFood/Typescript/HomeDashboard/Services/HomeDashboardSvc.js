@@ -8,13 +8,14 @@ var SuperFood;
             function HomeDashboardSvc($http, $q) {
                 this.httpService = $http;
                 this.qService = $q;
-                this.getProductApiPath = "ProductDashboard/GetByCategory";
+                this.getProductApiPath = "ProductDashboard/";
                 this.postShoppingCartApiPath = "Cart/SubmitOrder";
             }
-            HomeDashboardSvc.prototype.getProducts = function () {
+            HomeDashboardSvc.prototype.getProducts = function (actionName, value) {
                 var self = this;
                 var deferred = self.qService.defer();
-                self.httpService.get(self.getProductApiPath).then(function (result) {
+                var apiPath = self.getProductApiPath + actionName + '?value=' + value;
+                self.httpService.get(apiPath).then(function (result) {
                     deferred.resolve(result.data);
                 }, function (error) {
                     deferred.reject(error);
