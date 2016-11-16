@@ -34,7 +34,10 @@ namespace SuperFood.Controllers
                 var orderProduct = new OrderProduct();
                 orderProduct.OrderId = order.Id;
                 orderProduct.ProductId = grouped.First().Id;
-                orderProduct.Toppings = string.Join(";", grouped.First().SelectedTopings);
+                if (grouped.First().SelectedTopings != null && grouped.First().SelectedTopings.Any()) {
+               
+                    orderProduct.Toppings = string.Join(";", grouped.First().SelectedTopings);
+                }
                 orderProduct.Amount = grouped.Count();
                 _repository.Create(orderProduct);
             }
