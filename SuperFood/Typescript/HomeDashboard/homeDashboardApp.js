@@ -7,7 +7,7 @@ var SuperFood;
         var Config = (function () {
             function Config($routeProvider) {
                 $routeProvider
-                    .when("/home/dashboard", { templateUrl: "../Typescript/HomeDashboard/Templates/HomeDashboard.html", controller: "homeDashboardCtrl" })
+                    .when("/home/dashboard", { templateUrl: "../Typescript/HomeDashboard/Templates/HomeDashboard.html", controller: "productDashboardCtrl" })
                     .when("/home/cartreview", { templateUrl: "../Typescript/HomeDashboard/Templates/CartReview.html", controller: "cartCtrl" })
                     .otherwise({ redirectTo: '/home/dashboard' });
             }
@@ -18,10 +18,9 @@ var SuperFood;
         var app = angular.module("homeDashboardApp", ['ngRoute', 'ngSanitize', 'ui.bootstrap'])
             .config(Config)
             .factory('homeDashboardSvc', ['$http', '$q', SuperFood.HomeDashboardApp.HomeDashboardSvc.factory])
-            .controller('homeDashboardCtrl', SuperFood.HomeDashboardApp.HomeDashboardCtrl)
+            .controller('productDashboardCtrl', SuperFood.HomeDashboardApp.ProductDashboardCtrl)
             .controller('cartCtrl', SuperFood.HomeDashboardApp.CartCtrl)
             .directive('productDashboardContainer', SuperFood.HomeDashboardApp.ProductDashboardContainer.factory())
             .directive('afterRenderDashboard', SuperFood.HomeDashboardApp.AfterRenderDashboard.factory());
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=homedashboardapp.js.map

@@ -1162,7 +1162,7 @@
     <TypeScriptCompile Include="Typescript\Administration\Services\AdministrationSvc.ts" />
     <TypeScriptCompile Include="Typescript\App\app.ts" />
     <TypeScriptCompile Include="Typescript\HomeDashboard\Controllers\CartCtrl.ts" />
-    <TypeScriptCompile Include="Typescript\HomeDashboard\Controllers\HomeDashboardCtrl.ts" />
+    <TypeScriptCompile Include="Typescript\HomeDashboard\Controllers\ProductDashboardCtrl.ts" />
     <TypeScriptCompile Include="Typescript\HomeDashboard\Directives\DashboardPluginsDirectives.ts" />
     <TypeScriptCompile Include="Typescript\HomeDashboard\Directives\DashboardWidgetsDirectives.ts" />
     <TypeScriptCompile Include="Typescript\HomeDashboard\homeDashboardApp.ts" />

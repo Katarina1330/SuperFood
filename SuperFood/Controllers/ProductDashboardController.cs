@@ -11,17 +11,17 @@ using System.Web.Mvc;
 
 namespace SuperFood.Controllers
 {
-    public class DashboardController : Controller
+    public class ProductDashboardController : Controller
     {
         private readonly IRepositoryService _repository;
 
-        public DashboardController(IRepositoryService repository)
+        public ProductDashboardController(IRepositoryService repository)
         {
             _repository = repository;
         }
 
         // GET: Dashboard
-        public string GetAllProducts()
+        public string GetByCategory()
         {
             var allProducts = _repository.Read<Category>()
                 .Where(p => p.Identifier == CategoryConst.TopDeals)
@@ -45,10 +45,12 @@ namespace SuperFood.Controllers
                     Name = m.ProductType.Name
                 }
             });
-
-
-
             return JsonConvert.SerializeObject(allProductsViewModel);
+        }
+
+        public void GetByType()
+        {
+
         }
     }
 }

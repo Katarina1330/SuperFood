@@ -8,7 +8,7 @@ var SuperFood;
             function HomeDashboardSvc($http, $q) {
                 this.httpService = $http;
                 this.qService = $q;
-                this.getProductApiPath = "Dashboard/GetAllProducts";
+                this.getProductApiPath = "ProductDashboard/GetByCategory";
                 this.postShoppingCartApiPath = "Cart/SubmitOrder";
             }
             HomeDashboardSvc.prototype.getProducts = function () {
@@ -53,4 +53,3 @@ var SuperFood;
         HomeDashboardApp.HomeDashboardSvc = HomeDashboardSvc;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=HomeDashboardSvc.js.map

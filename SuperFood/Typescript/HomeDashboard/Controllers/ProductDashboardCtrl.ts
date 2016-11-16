@@ -4,7 +4,7 @@
 
 module SuperFood.HomeDashboardApp {
 
-    export class HomeDashboardCtrl {
+    export class ProductDashboardCtrl {
 
         private $scope: SuperFood.HomeDashboardApp.Interfaces.IHomeDashboardScope;
         private dataSvc: SuperFood.HomeDashboardApp.HomeDashboardSvc;

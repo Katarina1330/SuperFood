@@ -15,7 +15,7 @@ module SuperFood.HomeDashboardApp {
         constructor($http: ng.IHttpService, $q: ng.IQService) {
             this.httpService = $http;
             this.qService = $q;
-            this.getProductApiPath = "Dashboard/GetAllProducts";
+            this.getProductApiPath = "ProductDashboard/GetByCategory";
             this.postShoppingCartApiPath = "Cart/SubmitOrder";
         }
 
