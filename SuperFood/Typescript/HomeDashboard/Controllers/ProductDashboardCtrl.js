@@ -106,3 +106,4 @@ var SuperFood;
         HomeDashboardApp.ProductDashboardCtrl = ProductDashboardCtrl;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=ProductDashboardCtrl.js.map

@@ -45,3 +45,4 @@ var SuperFood;
         AdministrationApp.ProductCtrl = ProductCtrl;
     })(AdministrationApp = SuperFood.AdministrationApp || (SuperFood.AdministrationApp = {}));
 })(SuperFood || (SuperFood = {}));
+//# sourceMappingURL=ProductCtrl.js.map

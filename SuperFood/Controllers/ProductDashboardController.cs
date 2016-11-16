@@ -21,10 +21,10 @@ namespace SuperFood.Controllers
         }
 
         // GET: Dashboard
-        public string GetByCategory()
+        public string GetByCategory(string value)
         {
             var allProducts = _repository.Read<Category>()
-                .Where(p => p.Identifier == CategoryConst.TopDeals)
+                .Where(p => p.Identifier.ToLower() == value.ToLower())
                 .Single()
                 .Products;
 
@@ -48,7 +48,7 @@ namespace SuperFood.Controllers
             return JsonConvert.SerializeObject(allProductsViewModel);
         }
 
-        public void GetByType()
+        public void GetByType(string value)
         {
 
         }
