@@ -20,26 +20,37 @@ namespace SuperFood.Controllers
             _repository = repository;
         }
 
-        // GET: Dashboard
         public string GetByCategory(string value)
         {
-            var categoryProducts = _repository.Read<Category>()
+            IEnumerable<ProductViewModel> allProductsViewModel = null;
+
+            if (!string.IsNullOrWhiteSpace(value))
+            {
+                var categoryProducts = _repository.Read<Category>()
                 .Where(p => p.Identifier.ToLower() == value.ToLower())
                 .Single()
                 .Products;
-                
-            IEnumerable<ProductViewModel> allProductsViewModel = ConvertToEntity(categoryProducts);
+
+                allProductsViewModel = ConvertToEntity(categoryProducts);
+            }
             return JsonConvert.SerializeObject(allProductsViewModel);
         }
 
         public string GetByType(string value)
         {
-            var typeProduct = _repository.Read<ProductType>()
-                .Where(p => p.Identifier.ToLower() == value.ToLower())
-                .Single()
-                .Products;
+            IEnumerable<ProductViewModel> allProductsViewModel = null;
 
-            IEnumerable<ProductViewModel> allProductsViewModel = ConvertToEntity(typeProduct);
+            if (!string.IsNullOrWhiteSpace(value))
+            {
+                var typeProduct = _repository.Read<ProductType>()
+                    .Where(p => p.Identifier.ToLower() == value.ToLower())
+                    .Single()
+                    .Products;
+
+                allProductsViewModel = ConvertToEntity(typeProduct);
+            }
+
+
             return JsonConvert.SerializeObject(allProductsViewModel);
         }
 
