@@ -28,10 +28,10 @@ namespace SuperFood.Controllers
             {
                 var categoryProducts = _repository.Read<Category>()
                 .Where(p => p.Identifier.ToLower() == value.ToLower())
-                .Single()
-                .Products;
+                .SingleOrDefault();
 
-                allProductsViewModel = ConvertToEntity(categoryProducts);
+                if (categoryProducts != null)
+                    allProductsViewModel = ConvertToViewModel(categoryProducts.Products);
             }
             return JsonConvert.SerializeObject(allProductsViewModel);
         }
@@ -42,19 +42,18 @@ namespace SuperFood.Controllers
 
             if (!string.IsNullOrWhiteSpace(value))
             {
-                var typeProduct = _repository.Read<ProductType>()
+                var productType = _repository.Read<ProductType>()
                     .Where(p => p.Identifier.ToLower() == value.ToLower())
-                    .Single()
-                    .Products;
+                    .SingleOrDefault();
 
-                allProductsViewModel = ConvertToEntity(typeProduct);
+                if (productType != null)
+                    allProductsViewModel = ConvertToViewModel(productType.Products);
             }
-
 
             return JsonConvert.SerializeObject(allProductsViewModel);
         }
 
-        private static IEnumerable<ProductViewModel> ConvertToEntity(ICollection<Product> allProducts)
+        private static IEnumerable<ProductViewModel> ConvertToViewModel(ICollection<Product> allProducts)
         {
             return allProducts.Select(m => new ProductViewModel
             {
