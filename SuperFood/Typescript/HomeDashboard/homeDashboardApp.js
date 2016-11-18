@@ -9,6 +9,7 @@ var SuperFood;
                 $routeProvider
                     .when("/home/dashboard", { templateUrl: "../Typescript/HomeDashboard/Templates/HomeDashboard.html", controller: "productDashboardCtrl" })
                     .when("/home/cartreview", { templateUrl: "../Typescript/HomeDashboard/Templates/CartReview.html", controller: "cartCtrl" })
+                    .when("/about", { templateUrl: "../Typescript/HomeDashboard/Templates/About.html" })
                     .otherwise({ redirectTo: '/home/dashboard' });
             }
             return Config;
