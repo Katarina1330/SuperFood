@@ -38,10 +38,10 @@ var SuperFood;
                     }
                     else {
                         if (product.Amount < 10) {
+                            self.addToCart(product);
                             product.Amount += 1;
                         }
                     }
-                    self.addToCart(product);
                 };
                 self.$scope.downSpinner = function (product) {
                     if (!product.Amount) {
@@ -106,4 +106,3 @@ var SuperFood;
         HomeDashboardApp.ProductDashboardCtrl = ProductDashboardCtrl;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=ProductDashboardCtrl.js.map

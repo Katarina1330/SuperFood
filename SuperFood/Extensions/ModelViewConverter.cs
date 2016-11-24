@@ -7,5 +7,6 @@ namespace SuperFood.Extensions
 {
     public static class ModelViewConverter
     {
+
     }
 }

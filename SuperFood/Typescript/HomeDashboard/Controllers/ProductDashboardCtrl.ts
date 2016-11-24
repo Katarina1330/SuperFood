@@ -39,11 +39,10 @@ module SuperFood.HomeDashboardApp {
                     product.Amount = 1;
                 } else {
                     if (product.Amount < 10) {
+                        self.addToCart(product);
                         product.Amount += 1;
                     }
                 }
-
-                self.addToCart(product);
             }
 
             self.$scope.downSpinner = function (product) {

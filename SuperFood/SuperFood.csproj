@@ -233,6 +233,8 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductTypeController.cs" />
     <Compile Include="Controllers\SinglePageController.cs" />
+    <Compile Include="Extensions\EntityConverter.cs" />
+    <Compile Include="Extensions\ModelViewConverter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
