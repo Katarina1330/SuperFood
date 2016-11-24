@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using SuperFood.Extensions;
 using SuperFood.Models;
 using SuperFood.Shared.Data.Models;
 using SuperFood.Shared.Services.Interfaces;
@@ -23,16 +24,7 @@ namespace SuperFood.Controllers
         public string GetAll()
         {
             var orders = _repository.Read<Order>();
-
-            var viewModels = orders.Select(m => new OrderViewModel
-            {
-                Id = m.Id,
-                UserId = m.UserId,
-                Price = m.Price,
-                Date = m.Date,
-                IsNotified = m.IsNotified
-            }).ToList();
-
+            var viewModels = orders.Select(m => m.ToViewModel()).ToList();
             return JsonConvert.SerializeObject(viewModels);
         }
     }

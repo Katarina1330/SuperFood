@@ -1,10 +1,8 @@
-﻿using SuperFood.Models;
+﻿using SuperFood.Extensions;
+using SuperFood.Models;
 using SuperFood.Shared.Data.Models;
 using SuperFood.Shared.Services.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SuperFood.Controllers
@@ -22,34 +20,14 @@ namespace SuperFood.Controllers
         public JsonResult GetAll()
         {
             var products = _repositoryService.Read<Product>().ToList();
-
-            var viewModels = products.Select(m => new ProductViewModel
-            {
-                Id = m.Id,
-                Name = m.Name,
-                Details = m.Details?.Split(';'),
-                Description = m.Description,
-                Price = m.Price,
-                InStock = m.InStock,
-                ProductType = new ProductTypeViewModel { Id = m.ProductType.Id, Name = m.ProductType.Name },
-                IsDeleted = m.IsDeleted
-            }).ToList();
+            var viewModels = products.Select(m => m.ToViewModel()).ToList();
             return Json(viewModels, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         public JsonResult Create(ProductViewModel newProduct)
         {
-            var product = new Product();
-
-            product.Id = newProduct.Id;
-            product.Name = newProduct.Name;
-            product.Details = string.Join(";",newProduct.Details);
-            product.Description = newProduct.Description;
-            product.Price = newProduct.Price;
-            product.InStock = newProduct.InStock;
-            product.IsDeleted = newProduct.IsDeleted;
-            product.ProductTypeId = newProduct.ProductType.Id;
+            var product = newProduct.ToEntity();
 
             _repositoryService.Create(product);
             newProduct.Id = product.Id;
@@ -59,17 +37,7 @@ namespace SuperFood.Controllers
         [HttpPost]
         public void Update(ProductViewModel product)
         {
-            var productEntity = new Product
-            {
-                Id = product.Id,
-                Name = product.Name,
-                Details = string.Join(";", product.Details),
-                Description = product.Description,
-                Price = product.Price,
-                InStock = product.InStock,
-                IsDeleted = product.IsDeleted,
-                ProductTypeId = product.ProductType.Id
-            };
+            var productEntity = product.ToEntity();
 
             _repositoryService.Updata(productEntity);
         }

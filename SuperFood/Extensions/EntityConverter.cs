@@ -31,5 +31,16 @@ namespace SuperFood.Extensions
             };
         }
 
+        public static OrderViewModel ToViewModel(this Order order)
+        {
+            return new OrderViewModel
+            {
+                Id = order.Id,
+                UserId = order.UserId,
+                Price = order.Price,
+                Date = order.Date,
+                IsNotified = order.IsNotified
+            };
+        }
     }
 }
