@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using SuperFood.Extensions;
 using SuperFood.Models;
 using SuperFood.Shared.Constants;
 using SuperFood.Shared.Data.Models;
@@ -31,7 +32,7 @@ namespace SuperFood.Controllers
                 .SingleOrDefault();
 
                 if (categoryProducts != null)
-                    allProductsViewModel = ConvertToViewModel(categoryProducts.Products);
+                    allProductsViewModel = categoryProducts.Products.Select(m => m.ToViewModel());
             }
             return JsonConvert.SerializeObject(allProductsViewModel);
         }
@@ -47,31 +48,10 @@ namespace SuperFood.Controllers
                     .SingleOrDefault();
 
                 if (productType != null)
-                    allProductsViewModel = ConvertToViewModel(productType.Products);
+                    allProductsViewModel = productType.Products.Select(m => m.ToViewModel());
             }
 
             return JsonConvert.SerializeObject(allProductsViewModel);
-        }
-
-        private static IEnumerable<ProductViewModel> ConvertToViewModel(ICollection<Product> allProducts)
-        {
-            return allProducts.Select(m => new ProductViewModel
-            {
-                Id = m.Id,
-                Name = m.Name,
-                Description = m.Description,
-                Details = m.Details.Split(';'),
-                InStock = m.InStock,
-                IsDeleted = m.IsDeleted,
-                Price = m.Price,
-                Topings = m.Topings?.Split(';'),
-                Image = m.Image,
-                ProductType = new ProductTypeViewModel
-                {
-                    Id = m.ProductTypeId,
-                    Name = m.ProductType.Name
-                }
-            });
         }
     }
 }
