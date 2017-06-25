@@ -4,6 +4,7 @@ using SuperFood.Shared.Data.Models;
 using SuperFood.Shared.Services.Interfaces;
 using System.Linq;
 using System.Web.Mvc;
+using System.Collections.Generic;
 
 namespace SuperFood.Controllers
 {
@@ -22,6 +23,41 @@ namespace SuperFood.Controllers
             var products = _repositoryService.Read<Product>().ToList();
             var viewModels = products.Select(m => m.ToViewModel()).ToList();
             return Json(viewModels, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult GetByCategory(string value)
+        {
+            IEnumerable<ProductViewModel> allProductsViewModel = null;
+
+            if (!string.IsNullOrWhiteSpace(value))
+            {
+                var categoryProducts = _repositoryService.Read<Category>()
+                .Where(p => p.Identifier.ToLower() == value.ToLower())
+                .SingleOrDefault();
+
+                if (categoryProducts != null)
+                    allProductsViewModel = categoryProducts.Products.Select(m => m.ToViewModel());
+            }
+            return Json(allProductsViewModel, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult GetByType(string value)
+        {
+            IEnumerable<ProductViewModel> allProductsViewModel = null;
+
+            if (!string.IsNullOrWhiteSpace(value))
+            {
+                var productType = _repositoryService.Read<ProductType>()
+                    .Where(p => p.Identifier.ToLower() == value.ToLower())
+                    .SingleOrDefault();
+
+                if (productType != null)
+                    allProductsViewModel = productType.Products.Select(m => m.ToViewModel());
+            }
+
+            return Json(allProductsViewModel, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

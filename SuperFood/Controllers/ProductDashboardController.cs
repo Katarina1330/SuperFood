@@ -6,9 +6,11 @@ using SuperFood.Shared.Services.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using System;
 
 namespace SuperFood.Controllers
 {
+    [Obsolete("Avoid this class and use ProductController instead.")]
     public class ProductDashboardController : Controller
     {
         private readonly IRepositoryService _repository;
@@ -18,7 +20,7 @@ namespace SuperFood.Controllers
             _repository = repository;
         }
 
-        public string GetByCategory(string value)
+        public JsonResult GetByCategory(string value)
         {
             IEnumerable<ProductViewModel> allProductsViewModel = null;
 
@@ -31,7 +33,7 @@ namespace SuperFood.Controllers
                 if (categoryProducts != null)
                     allProductsViewModel = categoryProducts.Products.Select(m => m.ToViewModel());
             }
-            return JsonConvert.SerializeObject(allProductsViewModel);
+            return Json(allProductsViewModel, JsonRequestBehavior.AllowGet);
         }
 
         public string GetByType(string value)
