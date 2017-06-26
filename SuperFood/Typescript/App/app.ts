@@ -5,15 +5,15 @@
  * 
  * angular application module with config, one controller, and a data service
  */
-module SuperFood.App {
-    export class Config {
+//module SuperFood.App {
+//    export class Config {
 
-    }
+//    }
 
-    Config.$inject = [];
-    //inject all submodules for the app
-    var app = angular.module('app', ['administrationApp', 'homeDashboardApp' ])
-        .config(Config);
-}
+//    Config.$inject = [];
+//    //inject all submodules for the app
+//    var app = angular.module('app', ['administrationApp', 'homeDashboardApp' ])
+//        .config(Config);
+//}
 
 

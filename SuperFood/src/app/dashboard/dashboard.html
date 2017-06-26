@@ -1,10 +1,51 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
-    dashboard
-</body>
-</html>
+﻿<div class="card-tiles">
+    <div class="card warm" ng-repeat="product in productService.allProducts">
+        <div class="header margin-3x">
+            <div class="subheader padding-3x">
+                <img class="images-style" src="../../../Images/{{product.Image}}" alt="Product Image">
+                <div class="title padding-3x" ng-click="toggle()">
+                    {{product.Name}}
+                </div>
+            </div>
+            <div class="subheader padding-3x no-padding-t">
+                {{product.ProductType.Name}}
+            </div>
+        </div>
+        <div class="body margin-3x">
+            <div class="padding-3x">
+                <div class="row" ng-click="toggleDetails()">
+                    <div class=" padding-tb no-padding-t col-sm-10"> Details</div>
+                    <div ng-hide="detailsShow"><i class="material-icons col-sm-2">keyboard_arrow_down</i></div>
+                    <div ng-show="detailsShow"><i class="material-icons col-sm-2">keyboard_arrow_up</i></div>
+                </div>
+                <div class="expand-slide" ng-class="detailsShow">{{product.Description}}</div>
+            </div>
+        </div>
+        <div class="body margin-3x">
+            <div class="padding-3x" ng-click="toggleToping()">
+                <div class="row">
+                    <div class="padding-tb no-padding-t col-sm-10">Topings</div>
+                    <div ng-hide="topingShow"><i class="material-icons col-sm-2">keyboard_arrow_down</i></div>
+                    <div ng-show="topingShow"><i class="material-icons col-sm-2">keyboard_arrow_up</i></div>
+                </div>
+                <ul class="expand-slide" ng-class="topingShow">
+                    <li ng-repeat="toping in product.Topings">{{toping}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer margin-3x">
+            <div class="padding-3x">
+                <div class="row">
+                    Quantity
+                    <div class="col-sm-12 col-lg-3">
+                        <div class="form-inline">
+                            <button class="btn btn-default btn-sm" ng-click="upSpinner(product)"><i class="material-icons settings">add</i></button>
+                            <input type="text" class="form-control input-sm text-center" ng-model="product.Amount" placeholder="0" readonly />
+                            <button class="btn btn-default btn-sm" ng-click="downSpinner(product)"><i class="material-icons settings">remove</i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
