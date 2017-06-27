@@ -7,6 +7,7 @@ module SuperFood.App {
         constructor($routeProvider: ng.route.IRouteProvider) {
             $routeProvider
                 .when("/home/dashboard", { templateUrl: "../src/app/dashboard/dashboard.html", controller: "dashboardController" })
+                .when("/administration/product", { templateUrl: "../src/app/administration/product/product.html", controller: "productController" })
 
                 //default route
                 .otherwise({ redirectTo: '/home/dashboard' });
@@ -18,5 +19,7 @@ module SuperFood.App {
     var app = angular.module("app", ['ngRoute', 'ngSanitize', 'ui.bootstrap'])
         .config(Config)
         .factory('productService', ['$http', '$q', SuperFood.Services.ProductService.factory])
-        .controller('dashboardController', SuperFood.Dashboard.DashboardController);
+        .controller('dashboardController', SuperFood.Dashboard.DashboardController)
+        .controller('productController', SuperFood.Administration.ProductController);
 }
+

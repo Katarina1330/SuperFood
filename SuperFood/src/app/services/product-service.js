@@ -9,7 +9,7 @@ var SuperFood;
                 this.httpService = $http;
                 this.qService = $q;
                 this.getProductApiPath = "Product/";
-                this.postShoppingCartApiPath = "Cart/SubmitOrder";
+                this.getAllProductApiPath = "Product/GetAll";
             }
             ProductService.prototype.getProducts = function (actionName, value) {
                 var self = this;
@@ -17,36 +17,24 @@ var SuperFood;
                 var apiPath = self.getProductApiPath + actionName + '?value=' + value;
                 self.httpService.get(apiPath).then(function (result) {
                     deferred.resolve(result.data);
+                    self.selectedProduct = result.data;
+                }, function (error) {
+                    deferred.reject(error);
+                });
+                return deferred.promise;
+            };
+            ProductService.prototype.getAllProducts = function () {
+                var self = this;
+                var deferred = self.qService.defer();
+                self.httpService.get(self.getAllProductApiPath).then(function (result) {
+                    deferred.resolve(result.data);
                     self.allProducts = result.data;
                 }, function (error) {
                     deferred.reject(error);
                 });
                 return deferred.promise;
             };
-            ProductService.prototype.setShoppingCart = function (shoppingCart, totalPrice) {
-                var self = this;
-                self.shoppingCart = shoppingCart;
-                self.totalPrice = totalPrice;
-            };
-            ProductService.prototype.getShoppingCart = function () {
-                var self = this;
-                debugger;
-                return self.shoppingCart;
-            };
-            ProductService.prototype.getTotalPrice = function () {
-                var self = this;
-                return self.totalPrice;
-            };
-            ProductService.prototype.submitOrder = function (shoppingCart) {
-                var self = this;
-                var deferred = self.qService.defer();
-                self.httpService.post(self.postShoppingCartApiPath, shoppingCart).then(function (result) {
-                    deferred.resolve(result);
-                }, function (error) {
-                    deferred.reject(error);
-                });
-                return deferred.promise;
-            };
+            ;
             ProductService.factory = function ($http, $q) {
                 return new ProductService($http, $q);
             };
