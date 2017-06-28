@@ -25,4 +25,3 @@ var SuperFood;
         Dashboard.DashboardController = DashboardController;
     })(Dashboard = SuperFood.Dashboard || (SuperFood.Dashboard = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=dashboard-controller.js.map

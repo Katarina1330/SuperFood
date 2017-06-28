@@ -1,3 +1,38 @@
-﻿<div ng-repeat="product in productService.allProducts">
-    {{product.Name}}
+﻿<div class="padding-3x">
+    <div class="grid padding-2x">
+        <div class="header">
+            <div class="title padding-3x border-bottom">
+                <h2> <b>Grid View </b> </h2>
+            </div>
+            <div class="border-bottom">
+                <div class="subheader container ">
+                    <div class="row ">
+                        <div class="col-sm-4 padding-3x">
+                            <b>Id</b>
+                        </div>
+                        <div class="col-sm-4 padding-3x">
+                            <b>Name</b>
+                        </div>
+                        <div class="col-sm-4 padding-3x">
+                            <b> Description</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="body container">
+            <div class="row {{ $last ? '' : 'border-bottom-tiny' }}" ng-class="$last" ng-repeat="product in productService.allProducts">
+                <div class="col-sm-4 padding-3x">
+                    {{product.Id}}
+                </div>
+                <div class="col-sm-4 padding-3x">
+                    {{product.Name}}
+                </div>
+                <div class="col-sm-4 padding-3x">
+                    {{product.Description}}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

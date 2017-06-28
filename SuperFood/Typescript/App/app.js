@@ -12,4 +12,3 @@
 //    var app = angular.module('app', ['administrationApp', 'homeDashboardApp' ])
 //        .config(Config);
 //}
-//# sourceMappingURL=app.js.map

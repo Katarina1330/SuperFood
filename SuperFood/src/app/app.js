@@ -22,4 +22,3 @@ var SuperFood;
             .controller('productController', SuperFood.Administration.ProductController);
     })(App = SuperFood.App || (SuperFood.App = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=app.js.map

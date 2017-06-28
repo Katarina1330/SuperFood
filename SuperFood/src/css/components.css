@@ -188,3 +188,33 @@ ul.expand-slide {
     width: 200px;
     height: 100px;
 }
+
+
+/*GridView*/
+.grid {
+	    padding: 1px 0px 1px 0px;
+	    -webkit-box-shadow: 8px 8px 31px 9px rgba(120, 120, 120, 1);
+	    -moz-box-shadow: 8px 8px 31px 9px rgba(120, 120, 120, 1);
+	    box-shadow: 8px 8px 31px 9px rgba(120, 120, 120, 1);
+	}
+	
+ .grid .header .title {
+	    font: 600 1.5em/1 'Raleway', sans-serif;
+	    color: rgba(0, 0, 0, .5);
+	    text-align: center;
+	    text-transform: uppercase;
+	    word-wrap: break-word;
+	}
+	
+	.grid .header .subheader {
+	    color: gray;
+	    font-style: italic;
+	    text-align: justify;
+	    text-justify: inter-word;
+	}
+	
+	.grid .body {
+	    font-family: arial;
+	    text-align: justify;
+	    text-justify: inter-word;
+	}
