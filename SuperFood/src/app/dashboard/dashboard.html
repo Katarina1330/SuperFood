@@ -2,7 +2,7 @@
     <div class="card warm" ng-repeat="product in productService.selectedProduct">
         <div class="header margin-3x">
             <div class="subheader padding-3x">
-                <img class="images-style" src="../../../Images/{{product.Image}}" alt="Product Image">
+                <img class="images-style margin-l-3x" src="../../../Images/{{product.Image}}" alt="Product Image">
                 <div class="title padding-3x" ng-click="toggle()">
                     {{product.Name}}
                 </div>
@@ -40,7 +40,7 @@
                     <div class="col-sm-12 col-lg-3 padding-lr-2x">
                         <div class="form-inline">
                             <button class="btn btn-default btn-sm" ng-click="upSpinner(product)"><i class="material-icons settings">add</i></button>
-                            <input type="text" class="form-control input-sm text-center" ng-model="product.Amount" placeholder="0" readonly />
+                            <input type="text" class="form-control input-sm text-center" ng-model="addSubtractNumber" placeholder="0" readonly />
                             <button class="btn btn-default btn-sm" ng-click="downSpinner(product)"><i class="material-icons settings">remove</i></button>
                         </div>
                     </div>

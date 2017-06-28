@@ -99,6 +99,10 @@
     margin-right: 12px;
 }
 
+.margin-l-3x {
+    margin-left: 24px;
+}
+
 .margin-t-3x {
     margin-top: 12px !important;
 }

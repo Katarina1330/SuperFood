@@ -18,6 +18,17 @@ var SuperFood;
                 var self = this;
                 self.$scope.productService = self.productService;
                 self.productService.getProducts(this.defaulutActionName, this.defaultCategory);
+                self.$scope.addSubtractNumber = 0;
+                self.$scope.upSpinner = function (product) {
+                    if (self.$scope.addSubtractNumber < 10) {
+                        self.$scope.addSubtractNumber += 1;
+                    }
+                };
+                self.$scope.downSpinner = function (product) {
+                    if (self.$scope.addSubtractNumber > 0) {
+                        self.$scope.addSubtractNumber -= 1;
+                    }
+                };
             };
             DashboardController.$inject = ['$scope', 'productService'];
             return DashboardController;
