@@ -6,8 +6,8 @@ module SuperFood.Dashboard {
 
     export class DashboardController {
 
-        private $scope: any;
-        private productService: SuperFood.Services.ProductService;
+        public $scope: any;
+        public productService: SuperFood.Services.ProductService;
         private defaulutActionName = 'getbycategory';
         private defaultCategory = 'topdeals';
        

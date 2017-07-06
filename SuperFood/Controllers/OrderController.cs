@@ -21,11 +21,11 @@ namespace SuperFood.Controllers
         }
 
         // GET: Order
-        public string GetAll()
+        public JsonResult GetAll()
         {
             var orders = _repository.Read<Order>();
-            var viewModels = orders.Select(m => m.ToViewModel()).ToList();
-            return JsonConvert.SerializeObject(viewModels);
+            var viewModels = orders.ToList().Select(m => m.ToViewModel());
+            return Json(viewModels, JsonRequestBehavior.AllowGet);
         }
     }
 }

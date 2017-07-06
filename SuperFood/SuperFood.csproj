@@ -1175,7 +1175,9 @@
     <TypeScriptCompile Include="src\app\app.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard-controller.ts" />
     <TypeScriptCompile Include="src\app\services\administration-service.ts" />
+    <TypeScriptCompile Include="src\app\services\order-Service.ts" />
     <TypeScriptCompile Include="src\app\services\product-service.ts" />
+    <TypeScriptCompile Include="src\app\services\productType-service.ts" />
     <TypeScriptCompile Include="Typescript\Administration\administrationApp.ts" />
     <TypeScriptCompile Include="Typescript\Administration\Controllers\OrderCtrl.ts" />
     <TypeScriptCompile Include="Typescript\Administration\Controllers\ProductCtrl.ts" />

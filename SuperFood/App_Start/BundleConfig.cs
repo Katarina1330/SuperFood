@@ -41,16 +41,18 @@ namespace SuperFood
 
             //angular app
             bundles.Add(new ScriptBundle("~/bundles/Javascript/SuperFoodApp")
-                .Include("~/src/app/app.js"));
+                .Include("~/src/app/app.js")
+                .IncludeDirectory("~/src/app/services", "*.js"));
 
             //home dashboard module
             bundles.Add(new ScriptBundle("~/bundles/Javascript/SuperFoodHomeDashboardApp")
-                 .IncludeDirectory("~/src/app/dashboard", "*.js")
-                 .IncludeDirectory("~/src/app/services", "*.js"));
-
+                 .IncludeDirectory("~/src/app/dashboard", "*.js"));
+                 
             //administration module
             bundles.Add(new ScriptBundle("~/bundles/Javascript/SuperFoodAdministrationApp")
-                 .IncludeDirectory("~/src/app/administration/product", "*.js"));
+                 .IncludeDirectory("~/src/app/administration/product", "*.js")
+                 .IncludeDirectory("~/src/app/administration/productType", "*.js")
+                 .IncludeDirectory("~/src/app/administration/order", "*.js"));
         }
     }
 }
