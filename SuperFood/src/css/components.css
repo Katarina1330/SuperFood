@@ -1,4 +1,9 @@
-﻿/*Media Query */
+﻿.app-wrapper{
+   margin-top: 50px; 
+   margin-bottom: 50px
+}
+
+/*Media Query */
 
 @media only screen and (min-width: 400px) {
     .card-tiles {
@@ -193,6 +198,8 @@ ul.expand-slide {
 /*GridView*/
 .grid {
 	    padding: 1px 0px 1px 0px;
+        height: 450px;
+        margin: 30px 30px 0px 30px;
 	    -webkit-box-shadow: 8px 8px 31px 9px rgba(120, 120, 120, 1);
 	    -moz-box-shadow: 8px 8px 31px 9px rgba(120, 120, 120, 1);
 	    box-shadow: 8px 8px 31px 9px rgba(120, 120, 120, 1);
@@ -214,6 +221,8 @@ ul.expand-slide {
 	}
 	
 	.grid .body {
+        height: 306px;
+        overflow-y:scroll;
 	    font-family: arial;
 	    text-align: justify;
 	    text-justify: inter-word;
