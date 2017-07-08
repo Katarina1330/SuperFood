@@ -22,4 +22,3 @@ var SuperFood;
         Administration.ProductTypeController = ProductTypeController;
     })(Administration = SuperFood.Administration || (SuperFood.Administration = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=productType-controller.js.map

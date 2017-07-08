@@ -54,4 +54,3 @@ var SuperFood;
         HomeDashboardApp.HomeDashboardSvc = HomeDashboardSvc;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=HomeDashboardSvc.js.map

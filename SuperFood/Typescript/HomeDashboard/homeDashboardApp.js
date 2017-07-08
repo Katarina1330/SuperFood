@@ -20,4 +20,3 @@
 //        .directive('productDashboardContainer', SuperFood.HomeDashboardApp.ProductDashboardContainer.factory())
 //        .directive('afterRenderDashboard', SuperFood.HomeDashboardApp.AfterRenderDashboard.factory());
 //} 
-//# sourceMappingURL=homedashboardapp.js.map

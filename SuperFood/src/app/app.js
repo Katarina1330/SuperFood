@@ -28,4 +28,3 @@ var SuperFood;
             .controller('orderController', SuperFood.Administration.OrderController);
     })(App = SuperFood.App || (SuperFood.App = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=app.js.map

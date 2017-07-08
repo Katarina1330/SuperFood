@@ -43,4 +43,3 @@ var SuperFood;
         Services.ProductService = ProductService;
     })(Services = SuperFood.Services || (SuperFood.Services = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=product-service.js.map

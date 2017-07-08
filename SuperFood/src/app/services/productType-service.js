@@ -43,4 +43,3 @@ var SuperFood;
         Services.ProductTypeService = ProductTypeService;
     })(Services = SuperFood.Services || (SuperFood.Services = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=productType-service.js.map

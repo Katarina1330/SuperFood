@@ -45,4 +45,3 @@ var SuperFood;
         HomeDashboardApp.CartCtrl = CartCtrl;
     })(HomeDashboardApp = SuperFood.HomeDashboardApp || (SuperFood.HomeDashboardApp = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=CartCtrl.js.map

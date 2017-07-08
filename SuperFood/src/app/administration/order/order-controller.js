@@ -22,4 +22,3 @@ var SuperFood;
         Administration.OrderController = OrderController;
     })(Administration = SuperFood.Administration || (SuperFood.Administration = {}));
 })(SuperFood || (SuperFood = {}));
-//# sourceMappingURL=order-controller.js.map
