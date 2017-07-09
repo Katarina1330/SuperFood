@@ -1,34 +1,76 @@
-﻿<div class="padding-3x">
+﻿<div ng-if="addProductDialog">
+    <div class="dialog"></div>
+    <div class="box padding-3x">
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" ng-model="newProduct.Name">
+            </div>
+            <div class="form-group">
+                <label for="desc">Description:</label>
+                <input type="text" class="form-control" id="desc" ng-model="newProduct.Description">
+            </div>
+            <button type="button" class="btn btn-default" ng-click="saveProductDialog(newProduct)">Save</button>
+            <button type="button" class="btn btn-default" ng-click="cancelProductDialog()">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<div class="padding-3x">
     <div class="grid">
         <div class="header">
             <div class="title container padding-3x border-bottom">
-                <h2> <b>All Products </b> </h2>
-            </div>
-                <div class="subheader container border-bottom ">
-                    <div class="row ">
-                        <div class="col-sm-4 padding-3x">
-                            <b>Id</b>
-                        </div>
-                        <div class="col-sm-4 padding-3x">
-                            <b>Name</b>
-                        </div>
-                        <div class="col-sm-4 padding-3x">
-                            <b> Description</b>
-                        </div>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <b>All Products </b>
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="button" name="addProduct" value="Add Product" ng-click="addProduct()"/>
                     </div>
                 </div>
+            </div>
+            <div class="subheader container border-bottom ">
+                <div class="row ">
+                    <div class="col-sm-2 padding-3x">
+                        <b>Id</b>
+                    </div>
+                    <div class="col-sm-2 padding-3x">
+                        <b>Name</b>
+                    </div>
+                    <div class="col-sm-4 padding-3x">
+                        <b> Description</b>
+                    </div>
+                    <div class="col-sm-2 padding-3x">
+                        <b>Remove</b>
+                    </div>
+                    <div class="col-sm-2 padding-3x">
+                        <b>Edit</b>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="body container">
             <div class="row {{ $last ? '' : 'border-bottom-tiny' }}" ng-class="$last" ng-repeat="product in productService.allProducts">
-                <div class="col-sm-4 padding-3x">
+                <div class="col-sm-2 padding-3x">
                     {{product.Id}}
                 </div>
-                <div class="col-sm-4 padding-3x">
-                    {{product.Name}}
+                <div class="col-sm-2 padding-3x">
+                    <span ng-hide="product.IsEdit">  {{product.Name}} </span>
+                    <input type="text" ng-model="product.NameEdit" ng-show="product.IsEdit" />
                 </div>
                 <div class="col-sm-4 padding-3x">
-                    {{product.Description}}
+                    <span ng-hide="product.IsEdit"> {{product.Description}} </span>
+                    <input type="text" ng-model="product.DescriptionEdit" ng-show="product.IsEdit" />
+                </div>
+                <div class="col-sm-2 padding-3x">
+                    <input type="checkbox" name="delete" ng-change="deleteProduct(product)" ng-model="product.IsDeleted" />
+                </div>
+                <div class="col-sm-2 padding-3x">
+                    <input type="button" name="edit" value="Edit" ng-click="editProduct(product)" ng-model="product.IsDeleted" ng-hide="product.IsEdit" />
+                    <input type="button" name="save" value="Save" ng-click="saveProduct(product)" ng-show="product.IsEdit" />
+                    <input type="button" name="cancel" value="Cancel" ng-click="cancelProduct(product)" ng-show="product.IsEdit" />
+
                 </div>
             </div>
         </div>

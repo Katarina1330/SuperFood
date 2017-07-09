@@ -10,6 +10,9 @@ var SuperFood;
                 this.qService = $q;
                 this.getProductApiPath = "Product/";
                 this.getAllProductApiPath = "Product/GetAll";
+                this.deleteProductApiPath = "Product/Delete";
+                this.saveProductApiPath = "Product/Save";
+                this.addProductApiPath = "Product/Add";
             }
             ProductService.prototype.getProducts = function (actionName, value) {
                 var self = this;
@@ -35,6 +38,45 @@ var SuperFood;
                 return deferred.promise;
             };
             ;
+            ProductService.prototype.deleteProduct = function (product, errorCallback) {
+                var self = this;
+                var deferred = self.qService.defer();
+                self.httpService.post(self.deleteProductApiPath, product).then(function (result) {
+                    deferred.resolve(result.data);
+                }, function (error) {
+                    deferred.reject(error);
+                    errorCallback();
+                });
+                return deferred.promise;
+            };
+            ;
+            ProductService.prototype.saveProduct = function (product, successCallback, errorCallback) {
+                var self = this;
+                var productEdit = {};
+                productEdit.Id = product.Id;
+                productEdit.Name = product.NameEdit;
+                productEdit.Description = product.DescriptionEdit;
+                var deferred = self.qService.defer();
+                self.httpService.post(self.saveProductApiPath, productEdit).then(function (result) {
+                    deferred.resolve(result.data);
+                }, function (error) {
+                    deferred.reject(error);
+                    errorCallback();
+                });
+                return deferred.promise;
+            };
+            ProductService.prototype.saveProductDialog = function (newProduct, successCallback, errorCallback) {
+                var self = this;
+                var deferred = self.qService.defer();
+                self.httpService.post(self.addProductApiPath, newProduct).then(function (result) {
+                    deferred.resolve(result.data);
+                    self.allProducts.push(result.data);
+                }, function (error) {
+                    deferred.reject(error);
+                    errorCallback();
+                });
+                return deferred.promise;
+            };
             ProductService.factory = function ($http, $q) {
                 return new ProductService($http, $q);
             };
