@@ -10,8 +10,8 @@ var SuperFood;
                 this.qService = $q;
                 this.getProductApiPath = "Product/";
                 this.getAllProductApiPath = "Product/GetAll";
-                this.deleteProductApiPath = "Product/Delete";
-                this.saveProductApiPath = "Product/Save";
+                this.deleteProductApiPath = "Product/Update";
+                this.saveProductApiPath = "Product/Update";
                 this.addProductApiPath = "Product/Add";
             }
             ProductService.prototype.getProducts = function (actionName, value) {
@@ -20,7 +20,7 @@ var SuperFood;
                 var apiPath = self.getProductApiPath + actionName + '?value=' + value;
                 self.httpService.get(apiPath).then(function (result) {
                     deferred.resolve(result.data);
-                    self.selectedProduct = result.data;
+                    self.allProducts = result.data;
                 }, function (error) {
                     deferred.reject(error);
                 });
@@ -56,9 +56,17 @@ var SuperFood;
                 productEdit.Id = product.Id;
                 productEdit.Name = product.NameEdit;
                 productEdit.Description = product.DescriptionEdit;
+                productEdit.Details = product.Details;
+                productEdit.Price = product.Price;
+                productEdit.InStock = product.InStock;
+                productEdit.IsDeleted = product.IsDeleted;
+                productEdit.ProductType = product.ProductType;
                 var deferred = self.qService.defer();
                 self.httpService.post(self.saveProductApiPath, productEdit).then(function (result) {
                     deferred.resolve(result.data);
+                    if (successCallback) {
+                        successCallback();
+                    }
                 }, function (error) {
                     deferred.reject(error);
                     errorCallback();
@@ -71,9 +79,14 @@ var SuperFood;
                 self.httpService.post(self.addProductApiPath, newProduct).then(function (result) {
                     deferred.resolve(result.data);
                     self.allProducts.push(result.data);
+                    if (successCallback) {
+                        successCallback();
+                    }
                 }, function (error) {
                     deferred.reject(error);
-                    errorCallback();
+                    if (errorCallback) {
+                        errorCallback();
+                    }
                 });
                 return deferred.promise;
             };

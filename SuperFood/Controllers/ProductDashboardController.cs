@@ -43,7 +43,7 @@ namespace SuperFood.Controllers
             if (!string.IsNullOrWhiteSpace(value))
             {
                 var productType = _repository.Read<ProductType>()
-                    .Where(p => p.Identifier.ToLower() == value.ToLower())
+                    .Where(p => p.Name.ToLower() == value.ToLower())
                     .SingleOrDefault();
 
                 if (productType != null)

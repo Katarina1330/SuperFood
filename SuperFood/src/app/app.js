@@ -11,6 +11,7 @@ var SuperFood;
                     .when("/administration/product", { templateUrl: "../src/app/administration/product/product.html", controller: "productController" })
                     .when("/administration/producttypes", { templateUrl: "../src/app/administration/productType/productType.html", controller: "productTypeController" })
                     .when("/administration/order", { templateUrl: "../src/app/administration/order/order.html", controller: "orderController" })
+                    .when("/menu/product", { templateUrl: "../src/app/menu/menu.html", controller: "menuController" })
                     .otherwise({ redirectTo: '/home/dashboard' });
             }
             return Config;
@@ -25,6 +26,7 @@ var SuperFood;
             .controller('dashboardController', SuperFood.Dashboard.DashboardController)
             .controller('productController', SuperFood.Administration.ProductController)
             .controller('productTypeController', SuperFood.Administration.ProductTypeController)
-            .controller('orderController', SuperFood.Administration.OrderController);
+            .controller('orderController', SuperFood.Administration.OrderController)
+            .controller('menuController', SuperFood.Menu.MenuController);
     })(App = SuperFood.App || (SuperFood.App = {}));
 })(SuperFood || (SuperFood = {}));

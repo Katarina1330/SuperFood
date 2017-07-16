@@ -10,6 +10,7 @@ module SuperFood.App {
                 .when("/administration/product", { templateUrl: "../src/app/administration/product/product.html", controller: "productController" })
                 .when("/administration/producttypes", { templateUrl: "../src/app/administration/productType/productType.html", controller: "productTypeController" })
                 .when("/administration/order", { templateUrl: "../src/app/administration/order/order.html", controller: "orderController" })
+                .when("/menu/product", { templateUrl: "../src/app/menu/menu.html", controller: "menuController" })
 
                 //default route
                 .otherwise({ redirectTo: '/home/dashboard' });
@@ -26,6 +27,7 @@ module SuperFood.App {
         .controller('dashboardController', SuperFood.Dashboard.DashboardController)
         .controller('productController', SuperFood.Administration.ProductController)
         .controller('productTypeController', SuperFood.Administration.ProductTypeController)
-        .controller('orderController', SuperFood.Administration.OrderController);
+        .controller('orderController', SuperFood.Administration.OrderController)
+        .controller('menuController', SuperFood.Menu.MenuController);
 }
 

@@ -10,12 +10,14 @@ namespace SuperFood.Extensions
             var product = new Product();
             product.Id = productViewModel.Id;
             product.Name = productViewModel.Name;
-            product.Details = string.Join(";", productViewModel.Details);
+            product.Details = productViewModel.Details == null ? null : string.Join(";", productViewModel.Details);
             product.Description = productViewModel.Description;
             product.Price = productViewModel.Price;
             product.InStock = productViewModel.InStock;
             product.IsDeleted = productViewModel.IsDeleted;
-            product.ProductTypeId = productViewModel.ProductType.Id;
+            product.ProductTypeId = productViewModel.ProductType == null ? null : productViewModel.ProductType.Id;
+            product.Image = productViewModel.Image;
+            product.Topings = productViewModel.Topings == null ? null : string.Join(";", productViewModel.Topings);
 
             return product;
         }

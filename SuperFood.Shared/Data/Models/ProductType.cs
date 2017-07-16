@@ -24,8 +24,6 @@ namespace SuperFood.Shared.Data.Models
         [StringLength(4000)]
         public string Description { get; set; }
 
-        public string Identifier { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
     }

@@ -47,7 +47,11 @@ namespace SuperFood
             //home dashboard module
             bundles.Add(new ScriptBundle("~/bundles/Javascript/SuperFoodHomeDashboardApp")
                  .IncludeDirectory("~/src/app/dashboard", "*.js"));
-                 
+
+            // menu module
+            bundles.Add(new ScriptBundle("~/bundles/Javascript/SuperFoodMenuApp")
+                 .IncludeDirectory("~/src/app/menu", "*.js"));
+
             //administration module
             bundles.Add(new ScriptBundle("~/bundles/Javascript/SuperFoodAdministrationApp")
                  .IncludeDirectory("~/src/app/administration/product", "*.js")

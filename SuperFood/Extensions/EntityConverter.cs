@@ -17,7 +17,7 @@ namespace SuperFood.Extensions
                 Id = product.Id,
                 Name = product.Name,
                 Description = product.Description,
-                Details = product.Details.Split(';'),
+                Details = product.Details?.Split(';'),
                 InStock = product.InStock,
                 IsDeleted = product.IsDeleted,
                 Price = product.Price,
@@ -25,8 +25,8 @@ namespace SuperFood.Extensions
                 Image = product.Image,
                 ProductType = new ProductTypeViewModel
                 {
-                    Id = product.ProductTypeId,
-                    Name = product.ProductType.Name
+                    Id = product.ProductTypeId ?? 0,
+                    Name = product.ProductType?.Name
                 }
             };
         }

@@ -19,7 +19,7 @@ namespace SuperFood.Controllers
         }
 
         [HttpPost]
-        public ActionResult SubmitOrder(List<ProductViewModel> shoppingCart)
+        public JsonResult SubmitOrder(List<ProductViewModel> shoppingCart)
         {
             var order = new Order();
             order.Price = shoppingCart.Sum(p => p.Price);
@@ -42,7 +42,7 @@ namespace SuperFood.Controllers
                 _repository.Create(orderProduct);
             }
 
-            return View();
+            return Json(shoppingCart);
         }
     }
 }

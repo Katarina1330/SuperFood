@@ -31,7 +31,7 @@ namespace SuperFood.Shared.Data.Models
 
         public bool InStock { get; set; }
 
-        public int ProductTypeId { get; set; }
+        public int? ProductTypeId { get; set; }
 
         public bool IsDeleted { get; set; }
 

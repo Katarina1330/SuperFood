@@ -50,7 +50,7 @@ namespace SuperFood.Controllers
             if (!string.IsNullOrWhiteSpace(value))
             {
                 var productType = _repositoryService.Read<ProductType>()
-                    .Where(p => p.Identifier.ToLower() == value.ToLower())
+                    .Where(p => p.Name.ToLower() == value.ToLower())
                     .SingleOrDefault();
 
                 if (productType != null)
@@ -61,7 +61,7 @@ namespace SuperFood.Controllers
         }
 
         [HttpPost]
-        public JsonResult Create(ProductViewModel newProduct)
+        public JsonResult Add(ProductViewModel newProduct)
         {
             var product = newProduct.ToEntity();
 
