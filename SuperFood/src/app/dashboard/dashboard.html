@@ -40,12 +40,24 @@
                     <div class="col-sm-12 col-lg-3 padding-lr-2x">
                         <div class="form-inline">
                             <button class="btn btn-default btn-sm" ng-click="upSpinner(product)"><i class="material-icons settings">add</i></button>
-                            <input type="text" class="form-control input-sm text-center" ng-model="addSubtractNumber" placeholder="0" readonly />
+                            <input type="text" class="form-control input-sm text-center" ng-model="product.addSubtractNumber" placeholder="0" readonly />
                             <button class="btn btn-default btn-sm" ng-click="downSpinner(product)"><i class="material-icons settings">remove</i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <p class="navbar-text pull-left">
+            You have <b>{{ productService.cart.products.length }}</b> selected items.   TOTAL:<b> {{productService.cart.price | currency}}</b>
+        </p>
+
+        <a href="#home/cartreview" class="navbar-btn btn-danger btn pull-right" ng-hide="productService.cart.products.length == 0">
+            <i class="material-icons m-icon">shopping_cart</i> Place your order
+        </a>
     </div>
 </div>

@@ -13,6 +13,10 @@ var SuperFood;
                 this.deleteProductApiPath = "Product/Update";
                 this.saveProductApiPath = "Product/Update";
                 this.addProductApiPath = "Product/Add";
+                this.cart = {
+                    products: [],
+                    price: 0
+                };
             }
             ProductService.prototype.getProducts = function (actionName, value) {
                 var self = this;

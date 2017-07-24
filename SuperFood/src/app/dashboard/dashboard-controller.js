@@ -18,15 +18,27 @@ var SuperFood;
                 var self = this;
                 self.$scope.productService = self.productService;
                 self.productService.getProducts(this.defaulutActionName, this.defaultCategory);
-                self.$scope.addSubtractNumber = 0;
                 self.$scope.upSpinner = function (product) {
-                    if (self.$scope.addSubtractNumber < 10) {
-                        self.$scope.addSubtractNumber += 1;
+                    if (!product.addSubtractNumber) {
+                        product.addSubtractNumber = 0;
+                    }
+                    if (product.addSubtractNumber < 10) {
+                        product.addSubtractNumber += 1;
+                        self.productService.cart.products.push(product);
+                        self.productService.cart.price += product.Price;
                     }
                 };
                 self.$scope.downSpinner = function (product) {
-                    if (self.$scope.addSubtractNumber > 0) {
-                        self.$scope.addSubtractNumber -= 1;
+                    if (!product.addSubtractNumber) {
+                        product.addSubtractNumber = 0;
+                    }
+                    if (product.addSubtractNumber > 0) {
+                        product.addSubtractNumber -= 1;
+                        var index = self.productService.cart.products.indexOf(product);
+                        if (index > -1) {
+                            self.productService.cart.products.splice(index, 1);
+                            self.productService.cart.price -= product.Price;
+                        }
                     }
                 };
             };

@@ -7,6 +7,7 @@ module SuperFood.Services {
 
         public allProducts: any;
         public selectedProduct: any;
+        public cart: any;
         private httpService: ng.IHttpService;
         private qService: ng.IQService;
         private getProductApiPath: string;
@@ -23,7 +24,10 @@ module SuperFood.Services {
             this.deleteProductApiPath = "Product/Update";
             this.saveProductApiPath = "Product/Update";
             this.addProductApiPath = "Product/Add";
-
+            this.cart = {
+                products: [],
+                price: 0
+            };
         }
 
         public getProducts(actionName, value): ng.IPromise<any> {
