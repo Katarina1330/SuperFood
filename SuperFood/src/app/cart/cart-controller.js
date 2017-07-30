@@ -6,10 +6,12 @@ var SuperFood;
     var Cart;
     (function (Cart) {
         var CartController = (function () {
-            function CartController($scope, productService) {
+            function CartController($scope, productService, $timeout, $location) {
                 var self = this;
                 self.$scope = $scope;
                 self.productService = productService;
+                self.$timeout = $timeout;
+                self.$location = $location;
                 self.init();
             }
             CartController.prototype.init = function () {
@@ -20,12 +22,15 @@ var SuperFood;
                     self.$scope.displayDialog = true;
                 };
                 self.$scope.cancelDialog = function () {
-                    setTimeout(function () {
+                    self.$scope.orderSubmited = true;
+                    self.$timeout(function () {
                         self.$scope.displayDialog = false;
+                        self.$scope.orderSubmited = true;
+                        self.$location.url('/home/dashboard');
                     }, 2000);
                 };
             };
-            CartController.$inject = ['$scope', 'productService'];
+            CartController.$inject = ['$scope', 'productService', '$timeout', '$location'];
             return CartController;
         }());
         Cart.CartController = CartController;

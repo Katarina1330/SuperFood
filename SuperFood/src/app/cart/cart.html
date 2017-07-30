@@ -1,15 +1,23 @@
 ﻿
 <div ng-if="displayDialog">
     <div class="dialog"></div>
-    <div class="box">
-        <div class="dialog-text padding-3x">
-            This is an alert title <br> You can specify some description text in here.
+    <div class="box" ng-hide="orderSubmited">
+        <div class="dialog-text padding-3x" >
+            <form>
+                <label>  cart number</label>
+                <label>  exp. date</label>
+                <label>  email</label>
+            </form>
         </div>
         <div class="padding-3x">
             <input class="btn btn-primary btn-lg center margin-t-3x" type="button" value="GOT IT!" ng-click="cancelDialog()" />
         </div>
     </div>
+    <div  class="box" ng-show="orderSubmited">
+        Thank you for your order!
+    </div>
 </div>
+
 
 
 <div class="padding-3x">
@@ -17,7 +25,6 @@
         <div class="header">
             <div class="title padding-3x border-bottom">
                 <h2> <b>Total Price: {{productService.cart.price | currency }} </b> </h2>
-
                 <input type="button" class="btn btn-primary" value="Submit order" ng-click="OpenDialog()"/>
             </div>
            
