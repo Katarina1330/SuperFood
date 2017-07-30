@@ -1,0 +1,57 @@
+﻿
+<div ng-if="displayDialog">
+    <div class="dialog"></div>
+    <div class="box">
+        <div class="dialog-text padding-3x">
+            This is an alert title <br> You can specify some description text in here.
+        </div>
+        <div class="padding-3x">
+            <input class="btn btn-primary btn-lg center margin-t-3x" type="button" value="GOT IT!" ng-click="cancelDialog()" />
+        </div>
+    </div>
+</div>
+
+
+<div class="padding-3x">
+    <div class="grid padding-2x">
+        <div class="header">
+            <div class="title padding-3x border-bottom">
+                <h2> <b>Total Price: {{productService.cart.price | currency }} </b> </h2>
+
+                <input type="button" class="btn btn-primary" value="Submit order" ng-click="OpenDialog()"/>
+            </div>
+           
+           
+
+            <div class="border-bottom">
+                <div class="subheader container ">
+                    <div class="row ">
+                        <div class="col-sm-4 padding-3x">
+                            <b>Name</b>
+                        </div>
+                        <div class="col-sm-4 padding-3x">
+                            <b>Description</b>
+                        </div>
+                        <div class="col-sm-4 padding-3x">
+                            <b> Price</b>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="body container">
+            <div class="row {{ $last ? '' : 'border-bottom-tiny' }}" ng-class="$last" ng-repeat="product in productService.cart.products track by $index">
+                <div class="col-sm-4 padding-3x">
+                    {{product.Name}}
+                </div>
+                <div class="col-sm-4 padding-3x">
+                    {{product.Description}}
+                </div>
+                <div class="col-sm-4 padding-3x">
+                    {{product.Price | currency }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

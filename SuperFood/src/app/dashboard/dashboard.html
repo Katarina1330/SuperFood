@@ -56,7 +56,7 @@
             You have <b>{{ productService.cart.products.length }}</b> selected items.   TOTAL:<b> {{productService.cart.price | currency}}</b>
         </p>
 
-        <a href="#home/cartreview" class="navbar-btn btn-danger btn pull-right" ng-hide="productService.cart.products.length == 0">
+        <a href="#cart" class="navbar-btn btn-danger btn pull-right" ng-hide="productService.cart.products.length == 0">
             <i class="material-icons m-icon">shopping_cart</i> Place your order
         </a>
     </div>

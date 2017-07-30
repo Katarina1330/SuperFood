@@ -52,6 +52,10 @@ namespace SuperFood
             bundles.Add(new ScriptBundle("~/bundles/Javascript/SuperFoodMenuApp")
                  .IncludeDirectory("~/src/app/menu", "*.js"));
 
+            // cart module
+            bundles.Add(new ScriptBundle("~/bundles/Javascript/SuperFoodCartApp")
+                .IncludeDirectory("~/src/app/cart", "*.js"));
+
             //administration module
             bundles.Add(new ScriptBundle("~/bundles/Javascript/SuperFoodAdministrationApp")
                  .IncludeDirectory("~/src/app/administration/product", "*.js")

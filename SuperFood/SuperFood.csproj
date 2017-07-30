@@ -1090,6 +1090,7 @@
     <Content Include="src\app\administration\order\order.html" />
     <Content Include="src\app\administration\productType\productType.html" />
     <Content Include="src\app\administration\product\product.html" />
+    <Content Include="src\app\cart\cart.html" />
     <Content Include="src\app\dashboard\dashboard.html" />
     <Content Include="src\app\menu\menu.html" />
     <Content Include="src\css\components.css" />
@@ -1174,6 +1175,7 @@
     <TypeScriptCompile Include="src\app\administration\productType\productType-controller.ts" />
     <TypeScriptCompile Include="src\app\administration\product\product-controller.ts" />
     <TypeScriptCompile Include="src\app\app.ts" />
+    <TypeScriptCompile Include="src\app\cart\cart-controller.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard-controller.ts" />
     <TypeScriptCompile Include="src\app\menu\menu-controller.ts" />
     <TypeScriptCompile Include="src\app\services\administration-service.ts" />

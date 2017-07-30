@@ -16,6 +16,10 @@ var SuperFood;
             }
             DashboardController.prototype.init = function () {
                 var self = this;
+                self.productService.cart = {
+                    products: [],
+                    price: 0
+                };
                 self.$scope.productService = self.productService;
                 self.productService.getProducts(this.defaulutActionName, this.defaultCategory);
                 self.$scope.upSpinner = function (product) {
